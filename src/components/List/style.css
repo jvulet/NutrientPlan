@@ -1,0 +1,47 @@
+.ListCont {
+  background-color: #d3dbd4;
+}
+.listD{
+  font-size: 18px;
+  font-weight: lighter;
+}
+.namirnicaName {
+  width: auto;
+  font-size: 18px;
+  background-color: rgba(175, 158, 131, 0.4);
+  border-radius: 5px;
+  line-height: 20px;
+  padding-block: 10px;
+  padding-left: 15px;
+}
+.namirnicaQuantity {
+  width: auto;
+  font-size: 18px;
+}
+.xIcon {
+  width: auto;
+}
+.xIcon:hover {
+  cursor: pointer;
+}
+.listTitle {
+  text-align: center;
+  padding-top: 30px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 41px;
+}
+.descCont{
+  margin-top: 4%;
+  width: 55%;
+}
+.horizontalLine{
+  background-color: black;
+  margin-bottom: 3%;
+  margin-top: -1%;
+}
+.nabavkaCont{
+  width: 55%;
+}

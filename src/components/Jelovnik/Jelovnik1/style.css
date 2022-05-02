@@ -1,0 +1,166 @@
+.FirstTitle {
+  text-align: center;
+  padding-top: 30px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 41px;
+}
+.FirstContainer {
+  background-color: #d3dbd4;
+  height: 100%;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.OneButton {
+  background-color: rgba(175, 158, 131, 0.7) !important;
+  border-color: rgba(175, 158, 131, 0.7) !important;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  width: 110px;
+  height: 35px;
+  text-decoration: none;
+  padding-top: 5px;
+}
+
+.ButtonDiv {
+  height: auto;
+  width: 140px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.AllButton {
+  display: flex;
+  justify-content: center;
+  padding-block: 30px;
+}
+.ButtonCol {
+  padding-left: 0%;
+  padding-right: 0%;
+}
+.rowMeal {
+  display: flex;
+  justify-content: center;
+}
+.column1 {
+  padding-top: 2%;
+  width: fit-content;
+}
+.column2 {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 24px;
+}
+.Name {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  color: #665d4e;
+}
+.MealName {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 41px;
+  color: #000000;
+}
+.position-relative {
+  text-align: start;
+}
+.card-txt {
+  position: absolute;
+  top: 53%;
+  left: 47%;
+  transform: translate(-43%, -61%);
+}
+figcaption {
+  z-index: 1;
+}
+.IngredientsHeading {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #000000;
+}
+.Ingredients {
+  font-family: "Open Sans";
+  font-size: 15px;
+}
+.PrepareCard {
+  justify-content: center;
+}
+.PrepareHeading {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  padding-right: 2%;
+  color: #000000;
+}
+.prepareHead-div {
+  display: flex;
+  flex-direction: row;
+}
+.prepareTxt-div {
+  height: auto;
+}
+.meal-img {
+  mix-blend-mode: normal;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 5px;
+  margin: auto;
+}
+
+@media (max-width: 1000px) {
+  .Name {
+    font-size: 18px;
+  }
+  .MealName {
+    font-size: 26px;
+  }
+}
+@media (max-width: 860px) {
+  .Name {
+    font-size: 16px;
+  }
+  .MealName {
+    font-size: 24px;
+  }
+  .IngredientsHeading {
+    font-size: 13px;
+  }
+  .Ingredients {
+    font-size: 13px;
+  }
+  .position-relative {
+    height: 210px;
+    width: 282px;
+  }
+  .PrepareHeading {
+    font-size: 13px;
+  }
+  .fa-lg {
+    font-size: 1em;
+  }
+  .meal-img {
+    height: 300px;
+    width: 226px;
+  }
+}
+@media (max-width: 600px) {
+  .prepareHead-div {
+    margin-top: 40px;
+  }
+}

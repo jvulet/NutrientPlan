@@ -1,0 +1,99 @@
+.NabCont {
+  background-color: #d3dbd4;
+}
+.div-title {
+  background-color: #d3dbd4;
+}
+.NabavkaTitle {
+  text-align: center;
+  padding-top: 30px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 41px;
+}
+.instruction-txt {
+  font-family: "Open Sans";
+  font-size: 18px;
+  margin-left: 11px;
+}
+.cat-img {
+  mix-blend-mode: normal;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 5px;
+}
+.sec-column {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding-top: 20px;
+  margin-left: 0px;
+}
+.CatContainer {
+  padding-bottom: 4%;
+}
+.product-name {
+  width: fit-content;
+  padding-left: 20px;
+  font-size: 15px;
+  font-family: "Open Sans";
+}
+.circleplus-icon {
+  width: fit-content;
+  padding-top: 3px;
+  margin-left: -15px; 
+}
+.circleplus-icon:hover{
+  cursor: pointer;
+}
+.row-item {
+  width: max-content;
+}
+.typeName {
+  font-family: "Open Sans";
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 27px;
+  padding-block: 10px;
+  margin-left: 13px;
+  width: auto;
+}
+@media (max-width: 1050px) {
+  .product-name {
+    font-size: 13px;
+  }
+  .circleplus-icon {
+    font-size: 0.875em;
+  }
+}
+@media (max-width: 1200px) {
+  .instruction-txt {
+    font-size: 16px;
+  }
+  .rowCat {
+    flex-direction: column;
+  }
+  .col-lg-8 {
+    margin-left: 13px !important;
+    width: 98% !important;
+  }
+}
+@media (max-width: 754px) {
+  .instruction-txt {
+    font-size: 17px;
+  }
+  .col-3 {
+    width: 100%;
+  }
+  .col-lg-8 {
+    width: 60% !important;
+  }
+}
+@media (max-width: 535px) {
+  .instruction-txt {
+    font-size: 14px;
+  }
+  .typeName {
+    font-size: 18px;
+  }
+}

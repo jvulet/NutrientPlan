@@ -1,0 +1,184 @@
+.NavBar {
+  background-color: #d3dbd4;
+  box-shadow: 0px 5px 0px -2px rgba(186, 186, 186, 0.98);
+  -webkit-box-shadow: 0px 7px 0px -2px rgba(186, 186, 186, 0.98);
+  -moz-box-shadow: 0px 7px 0px -2px rgba(186, 186, 186, 0.98);
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1 !important;
+    align-items: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-collapse {
+    flex-basis: 0 !important;
+    flex-grow: 1 !important;
+    align-items: center;
+  }
+
+  .navbar-nav .dropdown-menu {
+    position: absolute !important;
+  }
+}
+
+@media (min-width: 909px) {
+  .NavCollapse {
+    display: flex !important;
+    justify-content: flex-start !important;
+  }
+  .navbar-nav .dropdown-menu {
+    position: absolute !important;
+  }
+  .navbar-dark .navbar-toggler {
+    display: none !important;
+  }
+  .navbar-collapse {
+    flex-basis: 0;
+    flex-grow: 0;
+    align-items: center;
+  }
+  .icons {
+    display: flex !important;
+  }
+  .navbar-nav {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 400px) {
+  .navbar-nav .dropdown-menu {
+    position: absolute !important;
+  }
+}
+
+@media (max-width: 920px) {
+  .icons {
+    left: 85% !important;
+    top: 4.5%!important;
+  }
+}
+@media (max-width: 840px) {
+  .icons {
+    left: 84% !important;
+    top: 4.5%!important;
+  }
+}
+@media (max-width: 740px) {
+  .icons {
+    left: 81% !important;
+    top: 4.5%!important;
+  }
+  .navbar-toggler {
+    margin-right: 22%!important ;
+  }
+}
+@media (max-width: 640px) {
+  .icons {
+    left: 78% !important;
+    top: 4.7%!important;
+  }
+  .list-icon{
+    margin-left: 63% !important;
+  }
+  
+}
+@media (max-width: 560px) {
+  .icons {
+    left: 75% !important;
+    top: 4.6%!important;
+  }
+  .list-icon{
+    margin-left: 40% !important;
+  }
+}
+@media (max-width: 490px) {
+  .icons {
+    left: 75% !important;
+    top: 4.9%!important;
+    margin-left: -14px;
+  }
+  .nav-link {
+    font-size: 18px !important;
+    padding-right: 25px!important;
+  }
+  .navbar-toggler {
+    font-size: 17px !important;
+    padding-top: 20px!important;
+  }
+  .list-icon{
+    margin-left: 95% !important;
+
+  }
+}
+
+@media (max-width: 440px) {
+  /* .icons {
+    left: 70% !important;
+  } */
+  .list-icon{
+    margin-left: 95% !important;
+
+  }
+  .nav-link {
+    font-size: 16px !important;
+  }
+  .navbar-toggler {
+    font-size: 14px !important;
+  }
+}
+@media (max-width: 365px) {
+  .icons {
+    left: 67% !important;
+  }
+}
+.navContainer {
+  /* justify-content: center !important; */
+  padding-top: none !important;
+  padding-bottom: none !important;
+}
+.JelovnikName {
+  color: black;
+  text-decoration: none;
+}
+.NabavkaName {
+  color: black;
+  text-decoration: none;
+}
+.Logo {
+  height: auto;
+  width: 200px;
+}
+
+.nav-link {
+  color: black !important;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27px;
+  /* padding-right: 30px !important; */
+}
+
+.icons {
+  display: flex !important;
+  justify-content: flex-end !important;
+  position: absolute;
+  top: 5%;
+  left: 87%;
+  padding-top: 10px;
+ /*  margin: -10px; */
+}
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("file:///D:/DownloadsD/bars-solid.svg");
+}
+.navbar-dark .navbar-toggler {
+  border: none; 
+}
