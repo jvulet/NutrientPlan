@@ -18,8 +18,10 @@ import Mjerenja from "../Mjerenja/mjerenja";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faListCheck, faPowerOff } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
+  const { cartTotalQuantity } = useSelector((state) => state.product);
   return (
     <>
       <Navbar collapseOnSelect expand="lg" className="NavBar" variant="dark">
@@ -34,21 +36,25 @@ const NavBar = () => {
 
           <Navbar.Toggle
             aria-controls="responsive-navbar-nav"
-            style={{ marginRight: "15%", paddingTop: '15px' }}
+            style={{ marginRight: "15%", paddingTop: "15px" }}
           />
           <Navbar.Collapse className="NavCollapse" id="responsive-navbar-nav">
-            <Nav className="Me-auto" style={{paddingTop: '20px'}}>
-              <Nav.Link as={Link} to="/mainpage" style={{paddingRight: '20px'}}>
+            <Nav className="Me-auto" style={{ paddingTop: "20px" }}>
+              <Nav.Link
+                as={Link}
+                to="/mainpage"
+                style={{ paddingRight: "20px" }}
+              >
                 NASLOVNICA
               </Nav.Link>
               <NavDropdown
                 title="JELOVNIK"
                 id="collasible-nav-dropdown"
                 className="Dropdown"
-                style={{paddingRight: '20px'}}
+                style={{ paddingRight: "20px" }}
               >
                 <NavDropdown.Item>
-                  <Link to="/jelovnik1" className="JelovnikName" >
+                  <Link to="/jelovnik1" className="JelovnikName">
                     1. jelovnik
                   </Link>
                 </NavDropdown.Item>
@@ -67,10 +73,10 @@ const NavBar = () => {
                 title="NABAVKA"
                 id="collasible-nav-dropdown"
                 className="Dropdown"
-                style={{paddingRight: '20px'}}
+                style={{ paddingRight: "20px" }}
               >
                 <NavDropdown.Item>
-                  <Link to="/nabavka1" className="NabavkaName" >
+                  <Link to="/nabavka1" className="NabavkaName">
                     Nabavka 1
                   </Link>
                 </NavDropdown.Item>
@@ -85,7 +91,11 @@ const NavBar = () => {
                   </Link>
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link as={Link} to={"/mjerenja"} style={{paddingRight: '20px'}}>
+              <Nav.Link
+                as={Link}
+                to={"/mjerenja"}
+                style={{ paddingRight: "20px" }}
+              >
                 MJERENJA
               </Nav.Link>
             </Nav>
@@ -96,7 +106,18 @@ const NavBar = () => {
       <Navbar.Collapse id="responsive-navbar-nav" className="icons">
         <Nav style={{ flexWrap: "nowrap" }}>
           <Nav.Link as={Link} to={"/lista"}>
-            <FontAwesomeIcon className="list-icon" icon={faListCheck} color={"black"} size="xl" style={{ marginLeft: "37%" }} />
+            <div>
+              <div className="bagDiv">
+                <span className="bag-quantity">{cartTotalQuantity}</span>
+              </div>
+              <FontAwesomeIcon
+                className="list-icon"
+                icon={faListCheck}
+                color={"black"}
+                size="xl"
+                style={{ marginLeft: "37%" }}
+              />
+            </div>
           </Nav.Link>
           <Nav.Link as={Link} to={"/login"}>
             <FontAwesomeIcon icon={faPowerOff} color={"black"} size="xl" />

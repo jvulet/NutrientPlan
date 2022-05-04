@@ -182,3 +182,17 @@
 .navbar-dark .navbar-toggler {
   border: none; 
 }
+.bag-quantity{
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: 15px;
+  height: 24px;
+  border-radius: 3px;
+  background-color: rgb(43, 43, 43);
+  color:white;
+}
+.bagDiv{
+  display: flex;
+  justify-content: flex-end;
+  width: 68px;
+}
