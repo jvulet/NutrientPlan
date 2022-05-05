@@ -3,12 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import "./style.css";
-import { removeFromCart } from "../../redux/rootReducer";
-//import React, { useEffect, useState } from "react";
+import { removeFromCart, getTotals } from "../../redux/rootReducer";
+
 const List = () => {
   const cart = useSelector((state) => state.product);
   //let [products, setProducts] = useState([]);
-
   console.log(cart.items);
   /* 
   useEffect(() => {
@@ -23,6 +22,7 @@ const List = () => {
   const handleRemoveFromCart = (product) => {
     dispatch(removeFromCart(product));
   };
+
   return (
     <Container className="ListCont" fluid>
       <h1 className="listTitle">POPIS ZA KUPNJU</h1>
@@ -42,7 +42,7 @@ const List = () => {
             <>
               <Row>
                 <Col lg={8}>
-                  <p className="namirnicaName" key={index}>
+                  <p className="namirnicaName" key={index} style={{ backgroundColor: item.frColor }}>
                     {item.productName}
                   </p>
                 </Col>
