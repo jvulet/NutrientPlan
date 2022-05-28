@@ -10,11 +10,11 @@ const LogIn = () => {
           <Col className="colImg" xs={6}  md={6} lg={6}>
             <img
               className="half-img"
-              src={require("../../images/login.jpg")}
+              src={require("../../images/loginnnn.jpg")}
               alt="LogIn image"
             />
           </Col>
-          <Col className="colLogo" xs={2}  md={2} lg={2}>
+          <Col className="colLogo"  lg={2}>
             <div className="logoDiv">
               <div className="logo-div">
                   <div className="txtDiv">
@@ -30,7 +30,7 @@ const LogIn = () => {
               </div>
             </div>
           </Col>
-          <Col className="colForm" xs={3} md={3} lg={3}>
+          <Col className="colForm" xs={4} md={4} lg={3}>
             <div className="loginOut">
               <div className="loginIn">
                 <form className="logInForm">
@@ -58,9 +58,9 @@ const LogIn = () => {
                     </button>
                   </div>
                   </div>
-                  <p className="forgot-password text-right">
+                  {/* <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
-                  </p>
+                  </p> */}
                 </form>
               </div>
             </div>
