@@ -18,6 +18,7 @@ import Mjerenja from "../Mjerenja/mjerenja";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faListCheck, faPowerOff } from "@fortawesome/free-solid-svg-icons";
+import Registration from "../LogIn/registration";
 
 const NavBar = () => {
   return (
@@ -116,6 +117,7 @@ const NavBar = () => {
           <Route path="/mjerenja" element={<Mjerenja />} />
           <Route path="/lista" element={<List />} />
           <Route path="/login" element={<LogIn />} />
+          <Route path="/registration" element={<Registration />} />
         </Routes>
       </div>
     </>

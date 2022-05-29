@@ -1,5 +1,5 @@
 .logInContainer {
-  padding-right: 0 !important;
+  /* padding-right: 0 !important; */
   padding-left: 0 !important;
   background-color: #d3dbd4;
 }
@@ -85,16 +85,36 @@
   padding-right: 46%;
   font-family: "Open Sans";
 }
+.inputLabel3 {
+  padding-right: 52%;
+  font-family: "Open Sans";
+}
+.inputLabel4 {
+  padding-right: 42%;
+  font-family: "Open Sans";
+}
+.inputLabel5 {
+  padding-right: 48%;
+  font-family: "Open Sans";
+}
 .btn {
   width: 65%;
   font-weight: bold;
 }
-.forgot-password{
+.forgot-password {
   align-self: center;
-  font-size: 16px;
+  font-size: 13px;
 }
-.blueReg{
+.blueReg {
   text-decoration: auto;
+}
+.alreadyHave {
+  align-self: center;
+  font-size: 13px;
+}
+.blueReg2 {
+  text-decoration: auto;
+  padding-left: 45px;
 }
 @media (max-width: 1200px) {
   .logo-login {
@@ -204,6 +224,15 @@
   .LogInHeading {
     padding-left: 19%;
   }
+  .inputLabel3 {
+    padding-right: 50%;
+  }
+  .inputLabel4 {
+    padding-right: 38%;
+  }
+  .inputLabel5 {
+    padding-right: 44%;
+  }
 }
 @media (max-width: 780px) {
   .inputLabel1 {
@@ -218,10 +247,25 @@
     padding-left: 19%;
     font-size: 17px;
   }
+  .inputLabel3 {
+    padding-right: 48%;
+    font-size: 15px;
+  }
+  .inputLabel4 {
+    padding-right: 36%;
+    font-size: 15px;
+  }
+  .inputLabel5 {
+    padding-right: 42%;
+    font-size: 15px;
+  }
   .form-control {
     font-size: small;
   }
-  .forgot-password{
+  .forgot-password {
+    font-size: 12px;
+  }
+  .btn {
     font-size: 14px;
   }
 }
@@ -232,6 +276,28 @@
   .inputLabel2 {
     padding-right: 36%;
   }
+  .inputLabel3 {
+    padding-right: 46%;
+  }
+  .inputLabel4 {
+    padding-right: 34%;
+  }
+  .inputLabel5 {
+    padding-right: 40%;
+  }
+  .btn{
+    font-size: smaller;
+  }
+}
+@media (max-width: 657px){
+  .btn{
+    font-size: small;
+  }
+}
+@media (max-width: 648px){
+  .btn{
+    font-size: x-small;
+  }
 }
 @media (max-width: 630px) {
   .inputLabel1 {
@@ -239,6 +305,15 @@
   }
   .inputLabel2 {
     padding-right: 34%;
+  }
+  .inputLabel3 {
+    padding-right: 44%;
+  }
+  .inputLabel4 {
+    padding-right: 32%;
+  }
+  .inputLabel5 {
+    padding-right: 38%;
   }
 }
 @media (max-width: 600px) {
@@ -256,6 +331,15 @@
   }
   .LogInHeading {
     padding-left: 30%;
+  }
+  .inputLabel3 {
+    padding-right: 35%;
+  }
+  .inputLabel4 {
+    padding-right: 30%;
+  }
+  .inputLabel5 {
+    padding-right: 32%;
   }
   .inputDiv {
     padding-top: 5%;

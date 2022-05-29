@@ -1,10 +1,10 @@
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { Link, Route, Routes } from "react-router-dom";
-import Registration from "./registration";
+import LogIn from "./login";
 import "./style.css";
 
-const LogIn = () => {
+const Registration = () => {
   return (
     <>
       <Container className="logInContainer" fluid>
@@ -41,13 +41,37 @@ const LogIn = () => {
               <div className="loginIn">
                 <form className="logInForm">
                   <div className="inputDiv">
-                    <h3 className="LogInHeading">Prijava</h3>
+                    <h3 className="LogInHeading">Registracija</h3>
+                    <div className="mb-3">
+                      <label className="inputLabel3">Ime:</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Unesite ime"
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label className="inputLabel4">Prezime:</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Unesite prezime"
+                      />
+                    </div>
                     <div className="mb-3">
                       <label className="inputLabel1">Korisničko ime:</label>
                       <input
                         type="text"
                         className="form-control"
                         placeholder="Korisničko ime"
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label className="inputLabel5">E-mail:</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="E-mail adresu"
                       />
                     </div>
                     <div className="mb-3">
@@ -60,14 +84,14 @@ const LogIn = () => {
                     </div>
                     <div className="d-grid">
                       <button type="submit" className="btn btn-primary">
-                        PRIJAVI SE
+                        REGISTRIRAJ SE
                       </button>
                     </div>
 
-                    <p className="forgot-password">
-                      Nisi{" "}
-                      <Link as={Link} to={"/registration"} className="blueReg">
-                        registriran?
+                    <p className="alreadyHave">
+                      Već imate korisnički račun{" "} <br></br>
+                      <Link as={Link} to={"/login"} className="blueReg2">
+                        Prijavi se!
                       </Link>
                     </p>
                   </div>
@@ -82,4 +106,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default Registration;
