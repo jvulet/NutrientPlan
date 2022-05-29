@@ -64,7 +64,7 @@
 }
 .d-grid {
   align-items: center;
-  display: flex!important;
+  display: flex !important;
   flex-direction: column;
 }
 .btn-primary {
@@ -77,11 +77,11 @@
   background-color: rgba(62, 109, 70, 1);
   border-color: rgba(62, 109, 70, 1);
 }
-.inputLabel1{
+.inputLabel1 {
   padding-right: 29%;
   font-family: "Open Sans";
 }
-.inputLabel2{
+.inputLabel2 {
   padding-right: 46%;
   font-family: "Open Sans";
 }
@@ -89,50 +89,206 @@
   width: 65%;
   font-weight: bold;
 }
+.forgot-password{
+  align-self: center;
+  font-size: 16px;
+}
+.blueReg{
+  text-decoration: auto;
+}
 @media (max-width: 1200px) {
   .logo-login {
     width: 68%;
     margin-top: -22%;
     margin-left: 28%;
   }
-  .txt-logo{
+  .txt-logo {
     margin-left: 18%;
   }
-  .logoDiv{
+  .logoDiv {
     margin-left: -18%;
   }
-  .inputLabel1{
-    padding-right: 23%;
+  .inputLabel1 {
+    padding-right: 21%;
   }
-  .inputLabel2{
+  .inputLabel2 {
     padding-right: 42%;
   }
 }
 @media (max-width: 1132px) {
-  .txt-logo{
+  .txt-logo {
     font-size: 16px;
     margin-left: 14%;
   }
-  .logo-login{
+  .logo-login {
     width: 63%;
     margin-top: -32%;
     margin-left: 26%;
   }
+  .inputLabel1 {
+    padding-right: 16%;
+  }
+  .inputLabel2 {
+    padding-right: 38%;
+  }
 }
-@media (max-width: 998px){
-  .colLogo{
+@media (max-width: 998px) {
+  .colLogo {
     display: none;
   }
 }
-@media (max-width: 998px){
-  .inputDiv{
+@media (max-width: 998px) {
+  .inputDiv {
     padding-top: 25%;
     padding-bottom: 34%;
   }
-  .half-img{
+  .half-img {
     height: auto;
   }
-  .logInContainer{
-    /* background-color: rgba(183, 184, 136, 0.9); */
+  .col-md-6 {
+    text-align: center;
+    margin-top: 4%;
+    margin-left: 2%;
+  }
+  .half-img {
+    height: 86%;
+    width: 94%;
+  }
+}
+@media (max-width: 992px) {
+  .col-md-6 {
+    text-align: center;
+    margin-top: 4%;
+    margin-left: 2%;
+  }
+  .half-img {
+    height: 86%;
+    width: 94%;
+  }
+  .inputLabel1 {
+    padding-right: 15%;
+  }
+  .inputLabel2 {
+    padding-right: 38%;
+  }
+  .LogInHeading {
+    padding-left: 18%;
+  }
+}
+@media (max-width: 991px) {
+  .inputLabel1 {
+    padding-right: 28%;
+  }
+  .inputLabel2 {
+    padding-right: 44%;
+  }
+  .LogInHeading {
+    padding-left: 18%;
+  }
+}
+@media (max-width: 991px) {
+  .inputLabel1 {
+    padding-right: 25%;
+  }
+  .inputLabel2 {
+    padding-right: 43%;
+  }
+}
+@media (max-width: 880px) {
+  .inputLabel1 {
+    padding-right: 20%;
+  }
+  .inputLabel2 {
+    padding-right: 40%;
+  }
+  .LogInHeading {
+    padding-left: 19%;
+  }
+}
+@media (max-width: 780px) {
+  .inputLabel1 {
+    padding-right: 18%;
+    font-size: 15px;
+  }
+  .inputLabel2 {
+    padding-right: 38%;
+    font-size: 15px;
+  }
+  .LogInHeading {
+    padding-left: 19%;
+    font-size: 17px;
+  }
+  .form-control {
+    font-size: small;
+  }
+  .forgot-password{
+    font-size: 14px;
+  }
+}
+@media (max-width: 680px) {
+  .inputLabel1 {
+    padding-right: 13%;
+  }
+  .inputLabel2 {
+    padding-right: 36%;
+  }
+}
+@media (max-width: 630px) {
+  .inputLabel1 {
+    padding-right: 8%;
+  }
+  .inputLabel2 {
+    padding-right: 34%;
+  }
+}
+@media (max-width: 600px) {
+  .colImg {
+    display: none;
+  }
+  .colForm {
+    width: 100%;
+  }
+  .inputLabel1 {
+    padding-right: 22%;
+  }
+  .inputLabel2 {
+    padding-right: 30%;
+  }
+  .LogInHeading {
+    padding-left: 30%;
+  }
+  .inputDiv {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  .form-control {
+    width: 40%;
+  }
+  .btn {
+    width: 40%;
+  }
+}
+@media (max-width: 560px) {
+  .inputLabel1 {
+    padding-right: 20%;
+  }
+  .inputLabel2 {
+    padding-right: 28%;
+  }
+}
+@media (max-width: 480px) {
+  .inputLabel1 {
+    padding-right: 16%;
+  }
+  .inputLabel2 {
+    padding-right: 26%;
+  }
+}
+@media (max-width: 400px) {
+  .inputLabel1 {
+    padding-right: 14%;
+  }
+  .inputLabel2 {
+    padding-right: 26%;
   }
 }

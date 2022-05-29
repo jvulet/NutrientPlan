@@ -10,7 +10,7 @@ const LogIn = () => {
           <Col className="colImg" xs={6}  md={6} lg={6}>
             <img
               className="half-img"
-              src={require("../../images/loginnnn.jpg")}
+              src={require("../../images/login.jpg")}
               alt="LogIn image"
             />
           </Col>
@@ -57,10 +57,11 @@ const LogIn = () => {
                       PRIJAVI SE
                     </button>
                   </div>
+                  
+                   <p className="forgot-password">
+                    Nisi <a href="#" className="blueReg">registriran?</a>
+                  </p> 
                   </div>
-                  {/* <p className="forgot-password text-right">
-                    Forgot <a href="#">password?</a>
-                  </p> */}
                 </form>
               </div>
             </div>
