@@ -9,10 +9,10 @@ const Registration = () => {
     <>
       <Container className="logInContainer" fluid>
         <Row>
-          <Col className="colImg" xs={6} md={6} lg={6}>
+          <Col className="colImg2" xs={6} md={6} lg={6}>
             <img
-              className="half-img"
-              src={require("../../images/login.jpg")}
+              className="half-img2"
+              src={require("../../images/loginR23.jpg")}
               alt="LogIn image"
             />
           </Col>
@@ -40,7 +40,7 @@ const Registration = () => {
             <div className="loginOut">
               <div className="loginIn">
                 <form className="logInForm">
-                  <div className="inputDiv">
+                  <div className="inputDiv2">
                     <h3 className="LogInHeading">Registracija</h3>
                     <div className="mb-3">
                       <label className="inputLabel3">Ime:</label>
@@ -89,7 +89,7 @@ const Registration = () => {
                     </div>
 
                     <p className="alreadyHave">
-                      Već imate korisnički račun{" "} <br></br>
+                      Već imate korisnički račun <br></br>
                       <Link as={Link} to={"/login"} className="blueReg2">
                         Prijavi se!
                       </Link>
@@ -101,7 +101,6 @@ const Registration = () => {
           </Col>
         </Row>
       </Container>
-
     </>
   );
 };

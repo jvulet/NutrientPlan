@@ -32,7 +32,6 @@
   margin-left: 37%;
 }
 .loginIn {
-  background-color: rgba(183, 184, 136, 0.3);
   border-radius: 3px;
 }
 .loginOut {
@@ -51,11 +50,17 @@
 .form-control {
   width: 65%;
 }
+.colForm{
+  background-color: rgba(183, 184, 136, 0.3);
+}
 .inputDiv {
   display: flex;
   flex-direction: column;
-  padding-top: 10%;
-  padding-bottom: 10%;
+}
+.inputDiv2{
+  display: flex;
+  flex-direction: column;
+  padding-top: 20%;
 }
 .mb-3 {
   align-items: center;
@@ -116,6 +121,11 @@
   text-decoration: auto;
   padding-left: 45px;
 }
+.half-img2{
+  width: 99%;
+  height: auto;
+}
+
 @media (max-width: 1200px) {
   .logo-login {
     width: 68%;
@@ -152,23 +162,34 @@
     padding-right: 38%;
   }
 }
+@media (max-width: 1040px) {
+  .half-img2{
+    padding-top: 1%;
+  }
+}
+@media (max-width: 1022px) {
+  .half-img2{
+    padding-top: 2%;
+  }
+}
+@media (max-width: 1006px) {
+  .half-img2{
+    padding-top: 3%;
+  }
+}
 @media (max-width: 998px) {
   .colLogo {
     display: none;
   }
 }
 @media (max-width: 998px) {
-  .inputDiv {
-    padding-top: 25%;
-    padding-bottom: 34%;
-  }
   .half-img {
     height: auto;
   }
-  .col-md-6 {
+  .colImg {
     text-align: center;
-    margin-top: 4%;
-    margin-left: 2%;
+     margin-top: 4%;
+    margin-left: 2%;  
   }
   .half-img {
     height: 86%;
@@ -176,7 +197,7 @@
   }
 }
 @media (max-width: 992px) {
-  .col-md-6 {
+  .colImg {
     text-align: center;
     margin-top: 4%;
     margin-left: 2%;
@@ -205,6 +226,9 @@
   .LogInHeading {
     padding-left: 18%;
   }
+  .half-img2{
+      padding-top: 6%;
+    }
 }
 @media (max-width: 991px) {
   .inputLabel1 {
@@ -212,6 +236,16 @@
   }
   .inputLabel2 {
     padding-right: 43%;
+  }
+}
+@media (max-width: 955px) {
+  .half-img2{
+    padding-top: 8%;
+  }
+}
+@media (max-width: 925px) {
+  .half-img2{
+    padding-top: 10%;
   }
 }
 @media (max-width: 880px) {
@@ -233,8 +267,19 @@
   .inputLabel5 {
     padding-right: 44%;
   }
+  .half-img2{
+    padding-top: 13%;
+  }
+}
+@media (max-width: 840px) {
+  .half-img2{
+    padding-top: 17%;
+  }
 }
 @media (max-width: 780px) {
+  .inputDiv{
+   padding-top: 15%; 
+  }
   .inputLabel1 {
     padding-right: 18%;
     font-size: 15px;
@@ -268,6 +313,24 @@
   .btn {
     font-size: 14px;
   }
+    .half-img2{
+      padding-top: 16%;
+    }
+}
+@media (max-width: 745px) {
+  .half-img2{
+    padding-top: 20%;
+  }
+}
+@media (max-width: 725px) {
+  .half-img2{
+    padding-top: 22%;
+  }
+}
+@media (max-width: 700px) {
+  .half-img2{
+    padding-top: 24%;
+  }
 }
 @media (max-width: 680px) {
   .inputLabel1 {
@@ -288,6 +351,9 @@
   .btn{
     font-size: smaller;
   }
+    .half-img2{
+      padding-top: 27%;
+  }
 }
 @media (max-width: 657px){
   .btn{
@@ -298,6 +364,9 @@
   .btn{
     font-size: x-small;
   }
+    .half-img2{
+      padding-top: 30%;
+    }
 }
 @media (max-width: 630px) {
   .inputLabel1 {
@@ -315,10 +384,22 @@
   .inputLabel5 {
     padding-right: 38%;
   }
+  .half-img2{
+    padding-top: 33%;
+  }
 }
 @media (max-width: 600px) {
   .colImg {
     display: none;
+  }
+  .colImg2 {
+    display: none;
+  }
+  .inputDiv{
+    padding-top: 7%;
+  }
+  .inputDiv2{
+    padding-top: 7%;
   }
   .colForm {
     width: 100%;
@@ -341,10 +422,6 @@
   .inputLabel5 {
     padding-right: 32%;
   }
-  .inputDiv {
-    padding-top: 5%;
-    padding-bottom: 5%;
-  }
   .form-control {
     width: 40%;
   }
@@ -359,6 +436,15 @@
   .inputLabel2 {
     padding-right: 28%;
   }
+  .inputLabel3 {
+    padding-right: 33%;
+  }
+  .inputLabel4 {
+    padding-right: 28%;
+  }
+  .inputLabel5 {
+    padding-right: 30%;
+  }
 }
 @media (max-width: 480px) {
   .inputLabel1 {
@@ -367,12 +453,30 @@
   .inputLabel2 {
     padding-right: 26%;
   }
+  .inputLabel3 {
+    padding-right: 32%;
+  }
+  .inputLabel4 {
+    padding-right: 26%;
+  }
+  .inputLabel5 {
+    padding-right: 28%;
+  }
 }
 @media (max-width: 400px) {
   .inputLabel1 {
     padding-right: 14%;
   }
   .inputLabel2 {
+    padding-right: 26%;
+  }
+  .inputLabel3 {
+    padding-right: 31%;
+  }
+  .inputLabel4 {
+    padding-right: 24%;
+  }
+  .inputLabel5 {
     padding-right: 26%;
   }
 }
