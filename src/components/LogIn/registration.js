@@ -12,7 +12,7 @@ const Registration = () => {
           <Col className="colImg2" xs={6} md={6} lg={6}>
             <img
               className="half-img2"
-              src={require("../../images/loginR23.jpg")}
+              src={require("../../images/loginR.jpg")}
               alt="LogIn image"
             />
           </Col>
