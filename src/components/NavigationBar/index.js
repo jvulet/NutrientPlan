@@ -102,7 +102,7 @@ const NavBar = () => {
     <>
       <Navbar collapseOnSelect expand="lg" className="NavBar" variant="dark">
         <Container className="navContainer" fluid>
-          <Navbar.Brand style={{ margin: "10px" }}>
+          <Navbar.Brand style={{ margin: "10px", cursor:"pointer"}} onClick={()=>navigate("/mainpage")} >
             <Image
               className="Logo"
               src={require("../../images/Logo.png")}
@@ -207,11 +207,14 @@ const NavBar = () => {
       <Navbar.Collapse id="responsive-navbar-nav" className="icons">
         <Nav style={{ flexWrap: "nowrap" }}>
           <Nav.Link as={Link} to={"/lista"}>
-            <div>
-              <div className="bagDiv">
-                <span className="bag-quantity">{cartTotalQuantity}</span>
+            {user ? (
+              <div>
+                <div className="bagDiv">
+                  <span className="bag-quantity">{cartTotalQuantity}</span>
+                </div>
               </div>
-            </div>
+            ) : null}
+
             <FontAwesomeIcon
               className="list-icon"
               icon={faListCheck}
@@ -232,8 +235,7 @@ const NavBar = () => {
         </Nav>
       </Navbar.Collapse>
 
-  
-      <Modal show={show} onHide={handleOpenModal} >
+      <Modal show={show} onHide={handleOpenModal}>
         <Modal.Body>
           Da biste pristupili ovoj stranici morate se prijaviti!
         </Modal.Body>
@@ -253,35 +255,83 @@ const NavBar = () => {
             Prijava
           </Button>
         </Modal.Footer>
-        
       </Modal>
-      
+
       <div>
         <Routes>
           <Route path="/mainpage" element={<MainPage />} />
-          {user && <Route path="/jelovnik1/*" element={<Jelovnik1 />} />}
-          {user && <Route path="/jelovnik2" element={<Jelovnik2 />} />}
-          {user && <Route path="/jelovnik3" element={<Jelovnik3 />} />}
-          {user && <Route path="/nabavka1" element={<Nabavka1 />} />}
-          {user && <Route path="/nabavka2" element={<Nabavka2 />} />}
-          {user && <Route path="/nabavka3" element={<Nabavka3 />} />}
+          <Route
+            path="/jelovnik1/*"
+            element={
+              <ProtectedRoute elementPath={<Jelovnik1 />}>
+                <Jelovnik1 />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/jelovnik2"
+            element={
+              <ProtectedRoute elementPath={<Jelovnik2 />}>
+                <Jelovnik2 />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/jelovnik3"
+            element={
+              <ProtectedRoute elementPath={<Jelovnik3 />}>
+                <Jelovnik3 />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/nabavka1"
+            element={
+              <ProtectedRoute elementPath={<Nabavka1 />}>
+                <Nabavka1 />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/nabavka2"
+            element={
+              <ProtectedRoute elementPath={<Nabavka2 />}>
+                <Nabavka2 />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/nabavka3"
+            element={
+              <ProtectedRoute elementPath={<Nabavka3 />}>
+                <Nabavka3 />
+              </ProtectedRoute>
+            }
+          />
 
           <Route
             path="/mjerenja"
             element={
-              <ProtectedRoute>
+              <ProtectedRoute elementPath={<Mjerenja />}>
                 <Mjerenja />
               </ProtectedRoute>
             }
           />
 
-          {user && <Route path="/lista" element={<List />} />}
+          <Route
+            path="/lista"
+            element={
+              <ProtectedRoute elementPath={<List />}>
+                <List />
+              </ProtectedRoute>
+            }
+          />
           {!user && <Route path="/login" element={<LogIn />} />}
           <Route path="/registration" element={<Registration />} />
         </Routes>
       </div>
     </>
-  )
+  );
 };
 
 export default NavBar;
