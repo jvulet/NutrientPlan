@@ -1,36 +1,52 @@
 import React, { useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
-import Registration from "./registration";
+import { Link, useNavigate } from "react-router-dom";
+import LogIn from "./login";
 import "./style.css";
 import { auth, db } from "../firebase";
-import { signInWithEmailAndPassword} from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { addDoc, collection } from "firebase/firestore";
 
-const LogIn = () => {
-  const [email, setEmail] = useState("");
+const Registration = () => {
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
 
-const navigate=useNavigate()
+  const navigate=useNavigate();
 
-  const handleSubmit = async (e) => {
-e.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate("/mainpage")
-    } catch (err) {
-      console.error(err);
-      alert(err.message);
-    }
+  const handleSubmitReg = async (e) => {
+    e.preventDefault();
+    try{
+      const res = await createUserWithEmailAndPassword(auth,email, password)
+      const user = res.user
+       await addDoc(collection(db,"users"), {
+          id: user.uid,
+          name,
+          surname,
+          email,
+          password,
+        })
+        
+          navigate("/mainpage")
+          setName(name)
+          setSurname(surname)
+          setEmail(email)
+          setPassword(password)
+       
+      }
+      catch(error){
+        console.log(error)
+      }
   };
-
   return (
     <>
       <Container className="logInContainer" fluid>
         <Row>
-          <Col className="colImg" xs={6} md={6} lg={6}>
+          <Col className="colImg2" xs={6} md={6} lg={6}>
             <img
-              className="half-img"
-              src={require("../../images/login.jpg")}
+              className="half-img2"
+              src={require("../../images/loginR.jpg")}
               alt="LogIn image"
             />
           </Col>
@@ -58,8 +74,28 @@ e.preventDefault();
             <div className="loginOut">
               <div className="loginIn">
                 <form className="logInForm">
-                  <div className="inputDiv">
-                    <h3 className="LogInHeading">Prijava</h3>
+                  <div className="inputDiv2">
+                    <h3 className="LogInHeading">Registracija</h3>
+                    <div className="mb-3">
+                      <label className="inputLabel3">Ime:</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Unesite ime"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label className="inputLabel4">Prezime:</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Unesite prezime"
+                        value={surname}
+                        onChange={(e) => setSurname(e.target.value)}
+                      />
+                    </div>
                     <div className="mb-3">
                       <label className="inputLabel1">E-mail adresa:</label>
                       <input
@@ -84,16 +120,16 @@ e.preventDefault();
                       <button
                         type="submit"
                         className="btn btn-primary"
-                        onClick={handleSubmit}
+                        onClick={handleSubmitReg}
                       >
-                        PRIJAVI SE
+                        REGISTRIRAJ SE
                       </button>
                     </div>
 
-                    <p className="forgot-password">
-                      Nisi{" "}
-                      <Link as={Link} to={"/registration"} className="blueReg">
-                        registriran?
+                    <p className="alreadyHave">
+                      Već imate korisnički račun <br></br>
+                      <Link as={Link} to={"/login"} className="blueReg2">
+                        Prijavi se!
                       </Link>
                     </p>
                   </div>
@@ -107,4 +143,4 @@ e.preventDefault();
   );
 };
 
-export default LogIn;
+export default Registration;
