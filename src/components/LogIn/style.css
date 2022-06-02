@@ -50,14 +50,14 @@
 .form-control {
   width: 65%;
 }
-.colForm{
+.colForm {
   background-color: rgba(183, 184, 136, 0.3);
 }
 .inputDiv {
   display: flex;
   flex-direction: column;
 }
-.inputDiv2{
+.inputDiv2 {
   display: flex;
   flex-direction: column;
   padding-top: 20%;
@@ -83,7 +83,7 @@
   border-color: rgba(62, 109, 70, 1);
 }
 .inputLabel1 {
-  padding-right: 29%;
+  padding-right: 31%;
   font-family: "Open Sans";
 }
 .inputLabel2 {
@@ -96,10 +96,6 @@
 }
 .inputLabel4 {
   padding-right: 42%;
-  font-family: "Open Sans";
-}
-.inputLabel5 {
-  padding-right: 48%;
   font-family: "Open Sans";
 }
 .btn {
@@ -121,7 +117,7 @@
   text-decoration: auto;
   padding-left: 45px;
 }
-.half-img2{
+.half-img2 {
   width: 99%;
   height: auto;
 }
@@ -139,7 +135,7 @@
     margin-left: -18%;
   }
   .inputLabel1 {
-    padding-right: 21%;
+    padding-right: 27%;
   }
   .inputLabel2 {
     padding-right: 42%;
@@ -156,24 +152,24 @@
     margin-left: 26%;
   }
   .inputLabel1 {
-    padding-right: 16%;
+    padding-right: 22%;
   }
   .inputLabel2 {
     padding-right: 38%;
   }
 }
 @media (max-width: 1040px) {
-  .half-img2{
+  .half-img2 {
     padding-top: 1%;
   }
 }
 @media (max-width: 1022px) {
-  .half-img2{
+  .half-img2 {
     padding-top: 2%;
   }
 }
 @media (max-width: 1006px) {
-  .half-img2{
+  .half-img2 {
     padding-top: 3%;
   }
 }
@@ -188,8 +184,8 @@
   }
   .colImg {
     text-align: center;
-     margin-top: 4%;
-    margin-left: 2%;  
+    margin-top: 4%;
+    margin-left: 2%;
   }
   .half-img {
     height: 86%;
@@ -207,7 +203,7 @@
     width: 94%;
   }
   .inputLabel1 {
-    padding-right: 15%;
+    padding-right: 19%;
   }
   .inputLabel2 {
     padding-right: 38%;
@@ -218,7 +214,7 @@
 }
 @media (max-width: 991px) {
   .inputLabel1 {
-    padding-right: 28%;
+    padding-right: 29%;
   }
   .inputLabel2 {
     padding-right: 44%;
@@ -226,9 +222,9 @@
   .LogInHeading {
     padding-left: 18%;
   }
-  .half-img2{
-      padding-top: 6%;
-    }
+  .half-img2 {
+    padding-top: 6%;
+  }
 }
 @media (max-width: 991px) {
   .inputLabel1 {
@@ -239,18 +235,18 @@
   }
 }
 @media (max-width: 955px) {
-  .half-img2{
+  .half-img2 {
     padding-top: 8%;
   }
 }
 @media (max-width: 925px) {
-  .half-img2{
+  .half-img2 {
     padding-top: 10%;
   }
 }
 @media (max-width: 880px) {
   .inputLabel1 {
-    padding-right: 20%;
+    padding-right: 25%;
   }
   .inputLabel2 {
     padding-right: 40%;
@@ -264,24 +260,21 @@
   .inputLabel4 {
     padding-right: 38%;
   }
-  .inputLabel5 {
-    padding-right: 44%;
-  }
-  .half-img2{
+  .half-img2 {
     padding-top: 13%;
   }
 }
 @media (max-width: 840px) {
-  .half-img2{
+  .half-img2 {
     padding-top: 17%;
   }
 }
 @media (max-width: 780px) {
-  .inputDiv{
-   padding-top: 15%; 
+  .inputDiv {
+    padding-top: 15%;
   }
   .inputLabel1 {
-    padding-right: 18%;
+    padding-right: 22%;
     font-size: 15px;
   }
   .inputLabel2 {
@@ -300,10 +293,6 @@
     padding-right: 36%;
     font-size: 15px;
   }
-  .inputLabel5 {
-    padding-right: 42%;
-    font-size: 15px;
-  }
   .form-control {
     font-size: small;
   }
@@ -313,28 +302,28 @@
   .btn {
     font-size: 14px;
   }
-    .half-img2{
-      padding-top: 16%;
-    }
+  .half-img2 {
+    padding-top: 16%;
+  }
 }
 @media (max-width: 745px) {
-  .half-img2{
+  .half-img2 {
     padding-top: 20%;
   }
 }
 @media (max-width: 725px) {
-  .half-img2{
+  .half-img2 {
     padding-top: 22%;
   }
 }
 @media (max-width: 700px) {
-  .half-img2{
+  .half-img2 {
     padding-top: 24%;
   }
 }
 @media (max-width: 680px) {
   .inputLabel1 {
-    padding-right: 13%;
+    padding-right: 16%;
   }
   .inputLabel2 {
     padding-right: 36%;
@@ -345,32 +334,29 @@
   .inputLabel4 {
     padding-right: 34%;
   }
-  .inputLabel5 {
-    padding-right: 40%;
-  }
-  .btn{
+  .btn {
     font-size: smaller;
   }
-    .half-img2{
-      padding-top: 27%;
+  .half-img2 {
+    padding-top: 27%;
   }
 }
-@media (max-width: 657px){
-  .btn{
+@media (max-width: 657px) {
+  .btn {
     font-size: small;
   }
 }
-@media (max-width: 648px){
-  .btn{
+@media (max-width: 648px) {
+  .btn {
     font-size: x-small;
   }
-    .half-img2{
-      padding-top: 30%;
-    }
+  .half-img2 {
+    padding-top: 30%;
+  }
 }
 @media (max-width: 630px) {
   .inputLabel1 {
-    padding-right: 8%;
+    padding-right: 12%;
   }
   .inputLabel2 {
     padding-right: 34%;
@@ -381,10 +367,7 @@
   .inputLabel4 {
     padding-right: 32%;
   }
-  .inputLabel5 {
-    padding-right: 38%;
-  }
-  .half-img2{
+  .half-img2 {
     padding-top: 33%;
   }
 }
@@ -395,10 +378,10 @@
   .colImg2 {
     display: none;
   }
-  .inputDiv{
+  .inputDiv {
     padding-top: 7%;
   }
-  .inputDiv2{
+  .inputDiv2 {
     padding-top: 7%;
   }
   .colForm {
@@ -419,9 +402,6 @@
   .inputLabel4 {
     padding-right: 30%;
   }
-  .inputLabel5 {
-    padding-right: 32%;
-  }
   .form-control {
     width: 40%;
   }
@@ -431,7 +411,7 @@
 }
 @media (max-width: 560px) {
   .inputLabel1 {
-    padding-right: 20%;
+    padding-right: 21%;
   }
   .inputLabel2 {
     padding-right: 28%;
@@ -442,13 +422,10 @@
   .inputLabel4 {
     padding-right: 28%;
   }
-  .inputLabel5 {
-    padding-right: 30%;
-  }
 }
 @media (max-width: 480px) {
   .inputLabel1 {
-    padding-right: 16%;
+    padding-right: 17%;
   }
   .inputLabel2 {
     padding-right: 26%;
@@ -458,9 +435,6 @@
   }
   .inputLabel4 {
     padding-right: 26%;
-  }
-  .inputLabel5 {
-    padding-right: 28%;
   }
 }
 @media (max-width: 400px) {
@@ -475,8 +449,5 @@
   }
   .inputLabel4 {
     padding-right: 24%;
-  }
-  .inputLabel5 {
-    padding-right: 26%;
   }
 }

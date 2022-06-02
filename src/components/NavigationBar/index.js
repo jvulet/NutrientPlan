@@ -1,12 +1,27 @@
-import React from "react";
-import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import {
+  Nav,
+  Navbar,
+  NavDropdown,
+  Container,
+  Modal,
+  Button,
+} from "react-bootstrap";
 import "./style.css";
 import Image from "react-bootstrap/Image";
 import Jelovnik1 from "../Jelovnik/Jelovnik1/jelovnik1";
 import Jelovnik2 from "../Jelovnik/Jelovnik2/jelovnik2";
 import Jelovnik3 from "../Jelovnik/Jelovnik3/jelovnik3";
 
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useNavigate,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 
 import MainPage from "../MainPage/mainpage";
 import Nabavka1 from "../Nabavka/Nabavka1/nabavka1";
@@ -17,10 +32,69 @@ import LogIn from "../LogIn/login";
 import Mjerenja from "../Mjerenja/mjerenja";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faListCheck, faPowerOff } from "@fortawesome/free-solid-svg-icons";
+import {
+  faListCheck,
+  faPowerOff,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import Registration from "../LogIn/registration";
 
+import { auth } from "../firebase";
+import { signOut } from "firebase/auth";
+import ProtectedRoute from "../Mjerenja/protected";
+
 const NavBar = () => {
+  const [user, setUser] = useState(null);
+  const [changeLoginIcon, setChangeLoginIcon] = useState(faUser);
+  const [show, setShow] = useState(false);
+
+  const [userHasToken, setUserHasToken] = useState(null);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((currentUser) => {
+      if (currentUser) {
+        currentUser.getIdToken().then((idToken) => {
+          setUserHasToken(idToken);
+        });
+        setUser(true);
+        setChangeLoginIcon(faPowerOff);
+      } else {
+        setUser(false);
+        setChangeLoginIcon(faUser);
+      }
+    });
+  }, []);
+
+  const handleLogout = () => {
+    if (user) {
+      signOut(auth);
+      localStorage.removeItem("userId");
+      setUserHasToken(null);
+    } else {
+      setUser(false);
+    }
+  };
+
+  const handleOpenModal = () => {
+    if (!user) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  };
+
+  const handleProtect = () => {
+    setShow(false);
+    navigate("/mainpage");
+  };
+
+  const handleGoToLogIn = () => {
+    setShow(false);
+    navigate("/login");
+  };
+
   return (
     <>
       <Navbar collapseOnSelect expand="lg" className="NavBar" variant="dark">
@@ -35,31 +109,47 @@ const NavBar = () => {
 
           <Navbar.Toggle
             aria-controls="responsive-navbar-nav"
-            style={{ marginRight: "15%", paddingTop: '15px' }}
+            style={{ marginRight: "15%", paddingTop: "15px" }}
           />
           <Navbar.Collapse className="NavCollapse" id="responsive-navbar-nav">
-            <Nav className="Me-auto" style={{paddingTop: '20px'}}>
-              <Nav.Link as={Link} to="/mainpage" style={{paddingRight: '20px'}}>
+            <Nav className="Me-auto" style={{ paddingTop: "20px" }}>
+              <Nav.Link
+                as={Link}
+                to="/mainpage"
+                style={{ paddingRight: "20px" }}
+              >
                 NASLOVNICA
               </Nav.Link>
               <NavDropdown
                 title="JELOVNIK"
                 id="collasible-nav-dropdown"
                 className="Dropdown"
-                style={{paddingRight: '20px'}}
+                style={{ paddingRight: "20px" }}
               >
                 <NavDropdown.Item>
-                  <Link to="/jelovnik1" className="JelovnikName" >
+                  <Link
+                    to="/jelovnik1"
+                    className="JelovnikName"
+                    onClick={handleOpenModal}
+                  >
                     1. jelovnik
                   </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link to="/jelovnik2" className="JelovnikName">
+                  <Link
+                    to="/jelovnik2"
+                    className="JelovnikName"
+                    onClick={handleOpenModal}
+                  >
                     2. jelovnik
                   </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link to="/jelovnik3" className="JelovnikName">
+                  <Link
+                    to="/jelovnik3"
+                    className="JelovnikName"
+                    onClick={handleOpenModal}
+                  >
                     3. jelovnik
                   </Link>
                 </NavDropdown.Item>
@@ -68,25 +158,43 @@ const NavBar = () => {
                 title="NABAVKA"
                 id="collasible-nav-dropdown"
                 className="Dropdown"
-                style={{paddingRight: '20px'}}
+                style={{ paddingRight: "20px" }}
               >
                 <NavDropdown.Item>
-                  <Link to="/nabavka1" className="NabavkaName" >
+                  <Link
+                    to="/nabavka1"
+                    className="NabavkaName"
+                    onClick={handleOpenModal}
+                  >
                     Nabavka 1
                   </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link to="/nabavka2" className="NabavkaName">
+                  <Link
+                    to="/nabavka2"
+                    className="NabavkaName"
+                    onClick={handleOpenModal}
+                  >
                     Nabavka 2
                   </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link to="/nabavka3" className="NabavkaName">
+                  <Link
+                    to="/nabavka3"
+                    className="NabavkaName"
+                    onClick={handleOpenModal}
+                  >
                     Nabavka 3
                   </Link>
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link as={Link} to={"/mjerenja"} style={{paddingRight: '20px'}}>
+
+              <Nav.Link
+                as={Link}
+                to={"/mjerenja"}
+                onClick={handleOpenModal}
+                style={{ paddingRight: "20px" }}
+              >
                 MJERENJA
               </Nav.Link>
             </Nav>
@@ -97,26 +205,71 @@ const NavBar = () => {
       <Navbar.Collapse id="responsive-navbar-nav" className="icons">
         <Nav style={{ flexWrap: "nowrap" }}>
           <Nav.Link as={Link} to={"/lista"}>
-            <FontAwesomeIcon className="list-icon" icon={faListCheck} color={"black"} size="xl" style={{ marginLeft: "37%" }} />
+            <FontAwesomeIcon
+              className="list-icon"
+              icon={faListCheck}
+              color={"black"}
+              size="xl"
+              style={{ marginLeft: "37%" }}
+              onClick={handleOpenModal}
+            />
           </Nav.Link>
           <Nav.Link as={Link} to={"/login"}>
-            <FontAwesomeIcon icon={faPowerOff} color={"black"} size="xl" />
+            <FontAwesomeIcon
+              icon={changeLoginIcon}
+              color={"black"}
+              size="xl"
+              onClick={handleLogout}
+            />
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
 
+  
+      <Modal show={show} onHide={handleOpenModal} >
+        <Modal.Body>
+          Da biste pristupili ovoj stranici morate se prijaviti!
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            className="buttonModal"
+            variant="primary"
+            onClick={handleProtect}
+          >
+            Povratak na naslovnicu
+          </Button>
+          <Button
+            className="buttonModal"
+            variant="secondary"
+            onClick={handleGoToLogIn}
+          >
+            Prijava
+          </Button>
+        </Modal.Footer>
+        
+      </Modal>
+      
       <div>
         <Routes>
           <Route path="/mainpage" element={<MainPage />} />
-          <Route path="/jelovnik1/*" element={<Jelovnik1 />} />
-          <Route path="/jelovnik2" element={<Jelovnik2 />} />
-          <Route path="/jelovnik3" element={<Jelovnik3 />} />
-          <Route path="/nabavka1" element={<Nabavka1 />} />
-          <Route path="/nabavka2" element={<Nabavka2 />} />
-          <Route path="/nabavka3" element={<Nabavka3 />} />
-          <Route path="/mjerenja" element={<Mjerenja />} />
-          <Route path="/lista" element={<List />} />
-          <Route path="/login" element={<LogIn />} />
+          {user && <Route path="/jelovnik1/*" element={<Jelovnik1 />} />}
+          {user && <Route path="/jelovnik2" element={<Jelovnik2 />} />}
+          {user && <Route path="/jelovnik3" element={<Jelovnik3 />} />}
+          {user && <Route path="/nabavka1" element={<Nabavka1 />} />}
+          {user && <Route path="/nabavka2" element={<Nabavka2 />} />}
+          {user && <Route path="/nabavka3" element={<Nabavka3 />} />}
+
+          <Route
+            path="/mjerenja"
+            element={
+              <ProtectedRoute>
+                <Mjerenja />
+              </ProtectedRoute>
+            }
+          />
+
+          {user && <Route path="/lista" element={<List />} />}
+          {!user && <Route path="/login" element={<LogIn />} />}
           <Route path="/registration" element={<Registration />} />
         </Routes>
       </div>

@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import Registration from "./registration";
 import "./style.css";
+import { auth, db } from "../firebase";
+import { signInWithEmailAndPassword} from "firebase/auth";
 
 const LogIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+const navigate=useNavigate()
+
+  const handleSubmit = async (e) => {
+e.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate("/mainpage")
+    } catch (err) {
+      console.error(err);
+      alert(err.message);
+    }
+  };
+
   return (
     <>
       <Container className="logInContainer" fluid>
@@ -43,11 +61,13 @@ const LogIn = () => {
                   <div className="inputDiv">
                     <h3 className="LogInHeading">Prijava</h3>
                     <div className="mb-3">
-                      <label className="inputLabel1">Korisničko ime:</label>
+                      <label className="inputLabel1">E-mail adresa:</label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Korisničko ime"
+                        placeholder="E-mail adresa"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </div>
                     <div className="mb-3">
@@ -56,10 +76,16 @@ const LogIn = () => {
                         type="password"
                         className="form-control"
                         placeholder="Unesite lozinku"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                     </div>
                     <div className="d-grid">
-                      <button type="submit" className="btn btn-primary">
+                      <button
+                        type="submit"
+                        className="btn btn-primary"
+                        onClick={handleSubmit}
+                      >
                         PRIJAVI SE
                       </button>
                     </div>
@@ -77,7 +103,6 @@ const LogIn = () => {
           </Col>
         </Row>
       </Container>
-
     </>
   );
 };

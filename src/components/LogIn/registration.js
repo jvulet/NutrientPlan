@@ -1,10 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LogIn from "./login";
 import "./style.css";
+import { auth, db } from "../firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { addDoc, collection } from "firebase/firestore";
 
 const Registration = () => {
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
+
+  const navigate=useNavigate();
+
+  const handleSubmitReg = async (e) => {
+    e.preventDefault();
+    try{
+      const res = await createUserWithEmailAndPassword(auth,email, password)
+      const user = res.user
+       await addDoc(collection(db,"users"), {
+          id: user.uid,
+          name,
+          surname,
+          email,
+          password,
+        })
+        
+          navigate("/mainpage")
+          setName(name)
+          setSurname(surname)
+          setEmail(email)
+          setPassword(password)
+       
+      }
+      catch(error){
+        console.log(error)
+      }
+  };
   return (
     <>
       <Container className="logInContainer" fluid>
@@ -48,6 +82,8 @@ const Registration = () => {
                         type="text"
                         className="form-control"
                         placeholder="Unesite ime"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                       />
                     </div>
                     <div className="mb-3">
@@ -56,22 +92,18 @@ const Registration = () => {
                         type="text"
                         className="form-control"
                         placeholder="Unesite prezime"
+                        value={surname}
+                        onChange={(e) => setSurname(e.target.value)}
                       />
                     </div>
                     <div className="mb-3">
-                      <label className="inputLabel1">Korisničko ime:</label>
+                      <label className="inputLabel1">E-mail adresa:</label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Korisničko ime"
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <label className="inputLabel5">E-mail:</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="E-mail adresu"
+                        placeholder="E-mail adresa"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </div>
                     <div className="mb-3">
@@ -80,10 +112,16 @@ const Registration = () => {
                         type="password"
                         className="form-control"
                         placeholder="Unesite lozinku"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                     </div>
                     <div className="d-grid">
-                      <button type="submit" className="btn btn-primary">
+                      <button
+                        type="submit"
+                        className="btn btn-primary"
+                        onClick={handleSubmitReg}
+                      >
                         REGISTRIRAJ SE
                       </button>
                     </div>
