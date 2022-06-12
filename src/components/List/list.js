@@ -3,12 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import "./style.css";
-import { removeFromCart, getTotals } from "../../redux/rootReducer";
+import { removeFromCart } from "../../redux/rootReducer";
+
 
 const List = () => {
   const cart = useSelector((state) => state.product);
   //let [products, setProducts] = useState([]);
-  console.log(cart.items);
+
   /* 
   useEffect(() => {
    const getProducts = JSON.parse(localStorage.getItem("items"));
@@ -28,21 +29,30 @@ const List = () => {
       <h1 className="listTitle">POPIS ZA KUPNJU</h1>
       <Container className="descCont">
         <Row>
-          <Col lg={8}><p className="listD">NAMIRNICE</p></Col>
-          <Col lg={2}><p className="listD">KOLIČINA</p></Col>
-          <Col lg={2}><p className="listD">UKLONI</p></Col>
+          <Col lg={8}>
+            <p className="listD">NAMIRNICE</p>
+          </Col>
+          <Col lg={2}>
+            <p className="listD">KOLIČINA</p>
+          </Col>
+          <Col lg={2}>
+            <p className="listD">UKLONI</p>
+          </Col>
         </Row>
         <hr className="horizontalLine" />
       </Container>
-  
+
       <Container className="nabavkaCont">
-        
         {cart.items.map((item, index) => {
           return (
             <>
               <Row>
                 <Col lg={8}>
-                  <p className="namirnicaName" key={index} style={{ backgroundColor: item.frColor }}>
+                  <p
+                    className="namirnicaName"
+                    key={index}
+                    style={{ backgroundColor: item.frColor }}
+                  >
                     {item.productName}
                   </p>
                 </Col>

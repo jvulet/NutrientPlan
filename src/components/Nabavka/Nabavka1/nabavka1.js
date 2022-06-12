@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import "./style.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 
-import {useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { addToCart } from "../../../redux/rootReducer";
+import { auth, db } from "../../firebase";
+import {
+  addDoc,
+  arrayUnion,
+  collection,
+  doc,
+  serverTimestamp,
+  setDoc,
+} from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 const Nabavka1 = () => {
   const Category = [
@@ -592,10 +602,23 @@ const Nabavka1 = () => {
 
   const dispatch = useDispatch();
 
-  const handleAddToCart = (product) => {
+  const [product, setProduct] = useState("");
+  const handleAddToCart = async (product) => {
     console.log(product.key);
     console.log(product.frColor);
     dispatch(addToCart(product));
+    try {
+      
+      await setDoc(
+        doc(db, "groceryList", `${auth.currentUser.uid}`),
+        {
+          productName: arrayUnion(...product),
+        },
+        { merge: true }
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
