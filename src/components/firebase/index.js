@@ -3,6 +3,17 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import { getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
+import { useEffect, useState } from "react";
+
+// Import the functions you need from the SDKs you need
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDpu_Y-6VvEiYq7FP1lnpDwG-9r6T0HLjE",
@@ -19,5 +30,33 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 const auth = getAuth(app);
+const storage = getStorage(app);
 
-export { db, auth };
+// Custom Hook
+export function useAuth() {
+  const [currentUser, setCurrentUser] = useState();
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (user) => setCurrentUser(user));
+    return unsub;
+  }, []);
+
+  return currentUser;
+}
+
+// Storage
+export async function upload(file, currentUser, setLoading) {
+  const fileRef = ref(storage, currentUser.uid + '.png');
+
+  setLoading(true);
+  
+  const snapshot = await uploadBytes(fileRef, file);
+  const photoURL = await getDownloadURL(fileRef);
+
+  updateProfile(currentUser, {photoURL});
+  
+  setLoading(false);
+  alert("Uploaded file!");
+}
+
+export { db, auth, storage };
