@@ -12,7 +12,7 @@ const ProtectedRoute = ({ elementPath }) => {
   if (!auth.currentUser) {
     //navigate('/mainpage')
 
-    navigate("/mainpage");
+    navigate("/");
 
     /* return (
       <div

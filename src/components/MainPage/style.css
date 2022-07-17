@@ -1,0 +1,373 @@
+.welcomeHead {
+  font-family: "Open Sans";
+  font-weight: bold;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  padding-top: 13%;
+}
+.welcomeMes {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  padding-left: 13%;
+}
+.MainCont {
+  background-color: #d3dbd4;
+}
+.picCol {
+  padding-right: 0% !important;
+}
+.welCol {
+  padding-left: 0% !important;
+}
+.FImCol {
+  position: relative;
+  padding-left: 0% !important;
+}
+.traka {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(58, 63, 73, 0.4);
+  height: 27%;
+  width: 500%;
+}
+.SImCol {
+  position: relative;
+}
+.TImCol {
+  padding-right: 0% !important;
+}
+.FImCol3 {
+  position: relative;
+  padding-left: 0% !important;
+}
+.SImCol3 {
+  position: relative;
+}
+.TImCol3 {
+  padding-right: 0% !important;
+}
+.trakaTxt {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+}
+.howTxt {
+  color: lightgray;
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}
+.boldLine {
+  border: 3px solid #3a3f49;
+  width: 150px;
+  position: absolute;
+  left: 44%;
+}
+.boldLineRow {
+  position: absolute;
+  height: 7%;
+  padding-top: 3%;
+}
+.functionRow {
+  position: absolute;
+  padding-top: 5%;
+  height: 18%;
+}
+.functionTxt {
+  position: absolute;
+  padding-left: 37%;
+  width: fit-content;
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 35px;
+  color: #3a3f49;
+}
+.todoRow {
+  margin-top: 12%;
+  margin-left: 0% !important;
+  margin-right: 0% !important;
+}
+.todo-img {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.planHeader {
+  font-family: "Roboto";
+  font-size: 25px;
+  width: fit-content;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.planTxt {
+  width: fit-content;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+}
+.beginDiv {
+  background: rgba(58, 63, 73, 0.4);
+}
+.beginTxt {
+  font-family: "Roboto";
+  font-size: 40px;
+  color: #ffffff;
+  width: fit-content;
+  margin-left: 7%;
+  margin-top: 3%;
+}
+.beginRow {
+  margin-top: 2%;
+  margin-left: 0% !important;
+  margin-right: 0% !important;
+}
+.begin-img {
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.beginKcal {
+  background: #c4c4c4;
+  height: 86px;
+  width: 98px !important;
+  border-radius: 50%;
+
+  font-family: "Roboto";
+  font-size: 20px;
+  width: fit-content;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.krugRow {
+  margin-top: -12%;
+}
+.beginKcalTxt {
+  width: fit-content;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12%;
+}
+.btn-outline-dark {
+  font-weight: 600;
+  border: solid 2px;
+  width: 64%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0% !important;
+}
+@media (max-width: 1290px) {
+  .functionTxt {
+    padding-left: 36%;
+  }
+}
+@media (max-width: 1050px) {
+  .beginKcal {
+    font-size: 18px;
+    height: 70px;
+    width: 80px !important;
+  }
+  .welcomeHead {
+    font-size: 35px;
+  }
+  .beginTxt {
+    font-size: 35px;
+  }
+  .welcomeMes {
+    font-size: 25px;
+  }
+  .functionTxt {
+    padding-left: 34%;
+  }
+}
+@media (max-width: 860px) {
+  .beginKcal {
+    font-size: 16px;
+    height: 62px;
+    width: 68px !important;
+  }
+  .welcomeHead {
+    font-size: 30px;
+  }
+  .beginTxt {
+    font-size: 30px;
+  }
+  .welcomeMes {
+    font-size: 20px;
+  }
+  .howTxt {
+    font-size: 24px;
+  }
+  .planTxt {
+    font-size: 14px;
+  }
+  .planHeader {
+    font-size: 22px;
+  }
+  .functionTxt {
+    font-size: 26px;
+  }
+}
+@media (max-width: 767px) {
+  .FImCol3 {
+    width: 51%;
+    left: 28%;
+  }
+  .SImCol3 {
+    width: 50%;
+    left: 28%;
+    top: 6%;
+  }
+  .TImCol3 {
+    width: 51%;
+    margin-left: 27% !important;
+    margin-top: 19%;
+  }
+  .beginTxt {
+    margin-left: 30%;
+  }
+}
+@media (max-width: 724px) {
+  .functionTxt {
+    padding-left: 32%;
+  }
+  .planTxt {
+    font-size: 12px;
+  }
+  .planHeader {
+    font-size: 20px;
+  }
+}
+@media (max-width: 682px) {
+  .wel-img1 {
+    transform: rotate(90deg);
+    width: auto;
+    height: 101%;
+    padding-top: 34%;
+  }
+  .welcomeMes {
+    font-size: 18px;
+  }
+  .welDivWrap {
+    padding-top: 20%;
+  }
+  .howTxt {
+    font-size: 20px;
+    padding-top: 2%;
+  }
+}
+@media (max-width: 682px) {
+  .beginKcalTxt {
+    font-size: 14px;
+  }
+  .beginKcal{
+    height: 52px;
+    width: 60px !important;
+  }
+}
+@media (max-width: 648px) {
+  .btn{
+    font-size: small!important;
+  }
+}
+@media (max-width: 619px) {
+  .functionTxt {
+    padding-left: 30%;
+  }
+  .welcomeMes {
+    font-size: 16px;
+  }
+  .welcomeHead {
+    font-size: 25px;
+  }
+  .beginTxt {
+    font-size: 25px;
+  }
+  .welDivWrap {
+    padding-top: 15%;
+  }
+  .todoRow {
+    margin-top: 13%;
+  }
+}
+@media (max-width: 600px){
+.btn {
+    width: 65%!important;
+}
+}
+@media (max-width: 554px) {
+  .functionTxt {
+    padding-left: 32%;
+  }
+  .welcomeMes {
+    font-size: 14px;
+  }
+  .welcomeHead {
+    font-size: 23px;
+  }
+  .beginTxt {
+    font-size: 23px;
+  }
+  .howTxt {
+    font-size: 16px;
+    padding-top: 4%;
+  }
+}
+@media (max-width: 492px) {
+  .welcomeMes {
+    font-size: 12px;
+  }
+  .welcomeHead {
+    font-size: 20px;
+  }
+  .beginTxt {
+    font-size: 20px;
+  }
+  .functionTxt {
+    font-size: 22px;
+  }
+  .todoRow {
+    margin-top: 14%;
+  }
+  .btn{
+    font-size: x-small!important;
+  }
+}
+@media (max-width: 426px) {
+  .welcomeMes {
+    font-size: 12px;
+    padding-left: 22%;
+  }
+  .welcomeHead {
+    font-size: 18px;
+  }
+  .beginTxt {
+    font-size: 18px;
+  }
+  .howTxt {
+    font-size: 12px;
+    padding-top: 6%;
+  }
+  .functionTxt {
+    font-size: 20px;
+  }
+  .todoRow {
+    margin-top: 17%;
+  }
+}

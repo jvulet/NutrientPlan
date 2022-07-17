@@ -90,7 +90,7 @@ const NavBar = () => {
 
   const handleProtect = () => {
     setShow(false);
-    navigate("/mainpage");
+    navigate("/");
   };
 
   const handleGoToLogIn = () => {
@@ -102,7 +102,7 @@ const NavBar = () => {
     <>
       <Navbar collapseOnSelect expand="lg" className="NavBar" variant="dark">
         <Container className="navContainer" fluid>
-          <Navbar.Brand style={{ margin: "10px", cursor:"pointer"}} onClick={()=>navigate("/mainpage")} >
+          <Navbar.Brand style={{ margin: "10px", cursor:"pointer"}} onClick={()=>navigate("/")} >
             <Image
               className="Logo"
               src={require("../../images/Logo.png")}
@@ -118,7 +118,7 @@ const NavBar = () => {
             <Nav className="Me-auto" style={{ paddingTop: "20px" }}>
               <Nav.Link
                 as={Link}
-                to="/mainpage"
+                to="/"
                 style={{ paddingRight: "20px" }}
               >
                 NASLOVNICA
@@ -259,7 +259,7 @@ const NavBar = () => {
 
       <div>
         <Routes>
-          <Route path="/mainpage" element={<MainPage />} />
+          <Route path="/" element={<MainPage />} />
           <Route
             path="/jelovnik1/*"
             element={
