@@ -129,7 +129,7 @@ const NavBar = () => {
               >
                 <NavDropdown.Item>
                   <Link
-                    to="/jelovnik1"
+                    to="/jelovnik1/ponedjeljak"
                     className="JelovnikName"
                     onClick={handleOpenModal}
                   >
