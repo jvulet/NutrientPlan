@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
-import Registration from "./registration";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
-import { auth, db } from "../firebase";
+import { auth} from "../firebase";
 import { signInWithEmailAndPassword} from "firebase/auth";
 
 const LogIn = () => {
@@ -16,7 +15,7 @@ const navigate=useNavigate()
 e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/mainpage")
+      navigate("/")
     } catch (err) {
       console.error(err);
       alert(err.message);

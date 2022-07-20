@@ -18,9 +18,7 @@ import {
   Routes,
   Route,
   Link,
-  useNavigate,
-  Navigate,
-  useLocation,
+  useNavigate
 } from "react-router-dom";
 
 import MainPage from "../MainPage/mainpage";
@@ -330,6 +328,7 @@ const NavBar = () => {
           <Route path="/registration" element={<Registration />} />
         </Routes>
       </div>
+
     </>
   );
 };

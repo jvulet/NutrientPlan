@@ -120,6 +120,7 @@
 }
 .beginDiv {
   background: rgba(58, 63, 73, 0.4);
+  padding-bottom: 2%;
 }
 .beginTxt {
   font-family: "Roboto";

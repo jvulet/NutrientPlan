@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import LogIn from "./login";
 import "./style.css";
 import { auth, db } from "../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -28,7 +27,7 @@ const Registration = () => {
           password,
         })
         
-          navigate("/mainpage")
+          navigate("/")
           setName(name)
           setSurname(surname)
           setEmail(email)
