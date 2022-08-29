@@ -2,23 +2,26 @@ import React, { useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
-import { auth} from "../firebase";
-import { signInWithEmailAndPassword} from "firebase/auth";
+import { auth } from "../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState(null);
 
-const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-e.preventDefault();
+    e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/")
+      navigate("/");
+      setMessage(false);
     } catch (err) {
-      console.error(err);
-      alert(err.message);
+      setMessage(true);
+      //console.error(err);
+      //alert("wrong");
     }
   };
 
@@ -79,6 +82,13 @@ e.preventDefault();
                         onChange={(e) => setPassword(e.target.value)}
                       />
                     </div>
+                    {message ? (
+                      <p className="errorMessage">
+                        Greška <br></br>(neuspješna autentikacija)!
+                      </p>
+                    ) : (
+                      <p></p>
+                    )}
                     <div className="d-grid">
                       <button
                         type="submit"

@@ -12,31 +12,34 @@ const Registration = () => {
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
 
-  const navigate=useNavigate();
+  const [message, setMessage] = useState(null);
+  const[errMessage,setErrMessage]=useState("");
+  const navigate = useNavigate();
 
   const handleSubmitReg = async (e) => {
     e.preventDefault();
-    try{
-      const res = await createUserWithEmailAndPassword(auth,email, password)
-      const user = res.user
-       await addDoc(collection(db,"users"), {
-          id: user.uid,
-          name,
-          surname,
-          email,
-          password,
-        })
-        
-          navigate("/")
-          setName(name)
-          setSurname(surname)
-          setEmail(email)
-          setPassword(password)
-       
-      }
-      catch(error){
-        console.log(error)
-      }
+    try {
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+      const user = res.user;
+      await addDoc(collection(db, "users"), {
+        id: user.uid,
+        name,
+        surname,
+        email,
+        password,
+      });
+
+      navigate("/");
+      setName(name);
+      setSurname(surname);
+      setEmail(email);
+      setPassword(password);
+      setMessage(false);
+    } catch (error) {
+      //console.log(error);
+      setMessage(true);
+      setErrMessage(error.message);
+    }
   };
   return (
     <>
@@ -115,6 +118,13 @@ const Registration = () => {
                         onChange={(e) => setPassword(e.target.value)}
                       />
                     </div>
+                    {message ? (
+                      <p className="errorMessage">
+                        {errMessage}
+                      </p>
+                    ) : (
+                      <p></p>
+                    )}
                     <div className="d-grid">
                       <button
                         type="submit"

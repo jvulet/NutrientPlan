@@ -1,7 +1,7 @@
 .ListCont {
   background-color: #d3dbd4;
 }
-.listD{
+.listD {
   font-size: 18px;
   font-weight: lighter;
 }
@@ -28,6 +28,9 @@
 .xIcon:hover {
   cursor: pointer;
 }
+.pdf-icon:hover {
+  cursor: pointer;
+}
 .listTitle {
   text-align: center;
   padding-top: 30px;
@@ -37,15 +40,165 @@
   font-size: 30px;
   line-height: 41px;
 }
-.descCont{
+.descCont {
   margin-top: 4%;
   width: 55%;
 }
-.horizontalLine{
+.horizontalLine {
   background-color: black;
   margin-bottom: 3%;
   margin-top: -1%;
 }
-.nabavkaCont{
+.nabavkaCont {
   width: 55%;
+}
+.pdf-icon {
+  margin-top: 2%;
+  margin-bottom: 3%;
+  margin-left: 23%;
+}
+@media (max-width: 1200px) {
+  .colListD1 {
+    width: 60% !important;
+  }
+  .pdf-icon {
+    margin-left: 25%;
+  }
+}
+@media (max-width: 991px) {
+  .colListD1 {
+    width: 50% !important;
+  }
+  .colListD2 {
+    width: 18% !important;
+  }
+  .colListD3 {
+    width: 18% !important;
+    padding-left: 8%;
+  }
+}
+@media (max-width: 800px) {
+  .pdf-icon {
+    margin-left: 20%;
+  }
+  .colListD1 {
+    width: 45% !important;
+  }
+  .colListD2 {
+    width: 18% !important;
+  }
+  .colListD3 {
+    padding-left: 10%;
+    width: 18% !important;
+  }
+  .namirnicaName {
+    font-size: 15px;
+  }
+  .namirnicaQuantity {
+    font-size: 16px;
+  }
+  .listTitle {
+    font-size: 26px;
+  }
+  .descCont {
+    width: 65%;
+  }
+  .nabavkaCont {
+    width: 65%;
+  }
+}
+@media (max-width: 750px) {
+  .descCont {
+    width: 72%;
+  }
+  .nabavkaCont {
+    width: 72%;
+  }
+  .pdf-icon {
+    margin-left: 17%;
+  }
+}
+@media (max-width: 666px) {
+  .colListD1 {
+    width: 42% !important;
+  }
+  .colListD2 {
+    width: 16% !important;
+  }
+  .colListD3 {
+    padding-left: 16%;
+    width: 31% !important;
+  }
+  .horizontalLine {
+    width: 104%;
+  }
+}
+@media (max-width: 577px) {
+  .pdf-icon {
+    margin-left: 14%;
+    font-size: xx-large;
+  }
+  .colListD1 {
+    width: 42% !important;
+  }
+  .colListD2 {
+    width: 16% !important;
+    padding-left: 5%;
+  }
+  .colListD3 {
+    padding-left: 21%;
+    width: 31% !important;
+  }
+  .horizontalLine {
+    width: 114%;
+  }
+  .listD {
+    font-size: 14px;
+  }
+  .namirnicaName {
+    font-size: 12px;
+  }
+  .namirnicaQuantity {
+    font-size: 14px;
+  }
+  .xIcon {
+    font-size: small;
+  }
+  .listTitle {
+    font-size: 21px;
+  }
+  .descCont {
+    width: 82%;
+  }
+  .nabavkaCont {
+    width: 82%;
+  }
+}
+@media (max-width: 450px) {
+  .pdf-icon {
+    margin-left: 8%;
+  }
+  .colListD1 {
+    width: 42% !important;
+  }
+  .colListD2 {
+    width: 16% !important;
+    padding-left: 5%;
+  }
+  .colListD3 {
+    padding-left: 21%;
+    width: 31% !important;
+  }
+  .horizontalLine {
+    width: 114%;
+  }
+  .listD {
+    font-size: 12px;
+  }
+  .descCont {
+    width: 97%;
+  }
+  .nabavkaCont {
+    width: 97%;
+  }
 }

@@ -18,7 +18,7 @@ import {
   Routes,
   Route,
   Link,
-  useNavigate
+  useNavigate,
 } from "react-router-dom";
 
 import MainPage from "../MainPage/mainpage";
@@ -100,7 +100,10 @@ const NavBar = () => {
     <>
       <Navbar collapseOnSelect expand="lg" className="NavBar" variant="dark">
         <Container className="navContainer" fluid>
-          <Navbar.Brand style={{ margin: "10px", cursor:"pointer"}} onClick={()=>navigate("/")} >
+          <Navbar.Brand
+            style={{ margin: "10px", cursor: "pointer" }}
+            onClick={() => navigate("/")}
+          >
             <Image
               className="Logo"
               src={require("../../images/Logo.png")}
@@ -114,11 +117,7 @@ const NavBar = () => {
           />
           <Navbar.Collapse className="NavCollapse" id="responsive-navbar-nav">
             <Nav className="Me-auto" style={{ paddingTop: "20px" }}>
-              <Nav.Link
-                as={Link}
-                to="/"
-                style={{ paddingRight: "20px" }}
-              >
+              <Nav.Link as={Link} to="/" style={{ paddingRight: "20px" }}>
                 NASLOVNICA
               </Nav.Link>
               <NavDropdown
@@ -202,36 +201,59 @@ const NavBar = () => {
         </Container>
       </Navbar>
 
-      <Navbar.Collapse id="responsive-navbar-nav" className="icons">
-        <Nav style={{ flexWrap: "nowrap" }}>
-          <Nav.Link as={Link} to={"/lista"}>
-            {user ? (
+      {user ? (
+        <Navbar.Collapse id="responsive-navbar-nav" className="iconsLogedIn">
+          <Nav style={{ flexWrap: "nowrap" }}>
+            <Nav.Link as={Link} to={"/lista"} className="nav-listaLogedIn">
               <div>
                 <div className="bagDiv">
                   <span className="bag-quantity">{cartTotalQuantity}</span>
                 </div>
               </div>
-            ) : null}
-
-            <FontAwesomeIcon
-              className="list-icon"
-              icon={faListCheck}
-              color={"black"}
-              size="xl"
-              style={{ marginLeft: "37%" }}
-              onClick={handleOpenModal}
-            />
-          </Nav.Link>
-          <Nav.Link as={Link} to={"/login"}>
-            <FontAwesomeIcon
-              icon={changeLoginIcon}
-              color={"black"}
-              size="xl"
-              onClick={handleLogout}
-            />
-          </Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
+              <FontAwesomeIcon
+                className="list-iconLogedIn"
+                icon={faListCheck}
+                color={"black"}
+                size="xl"
+                style={{ marginLeft: "37%" }}
+                onClick={handleOpenModal}
+              />
+            </Nav.Link>
+            <Nav.Link as={Link} to={"/login"} className="nav-logLogedIn">
+              <FontAwesomeIcon
+              className="log-iconLogedIn"
+                icon={changeLoginIcon}
+                color={"black"}
+                size="xl"
+                onClick={handleLogout}
+              />
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      ) : (
+        <Navbar.Collapse id="responsive-navbar-nav" className="iconsLogedOut">
+          <Nav style={{ flexWrap: "nowrap" }}>
+            <Nav.Link as={Link} to={"/lista"} className="nav-listaLogedOut">
+              <FontAwesomeIcon
+                className="list-iconLogedOut"
+                icon={faListCheck}
+                color={"black"}
+                size="xl"
+                onClick={handleOpenModal}
+              />
+            </Nav.Link>
+            <Nav.Link as={Link} to={"/login"} className="nav-logLogedOut">
+              <FontAwesomeIcon
+              className="log-iconLogedOut"
+                icon={changeLoginIcon}
+                color={"black"}
+                size="xl"
+                onClick={handleLogout}
+              />
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      )}
 
       <Modal show={show} onHide={handleOpenModal}>
         <Modal.Body>
@@ -328,7 +350,6 @@ const NavBar = () => {
           <Route path="/registration" element={<Registration />} />
         </Routes>
       </div>
-
     </>
   );
 };

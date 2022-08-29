@@ -121,12 +121,18 @@
   width: 99%;
   height: auto;
 }
-
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  width: fit-content;
+  align-self: center;
+  margin-top: -5%;
+}
 @media (max-width: 1200px) {
   .logo-login {
     width: 68%;
     margin-top: -22%;
-    margin-left: 28%;
+    margin-left: 14%;
   }
   .txt-logo {
     margin-left: 18%;
@@ -148,8 +154,8 @@
   }
   .logo-login {
     width: 63%;
-    margin-top: -32%;
-    margin-left: 26%;
+    margin-top: -24%;
+    margin-left: 5%;
   }
   .inputLabel1 {
     padding-right: 22%;
@@ -305,6 +311,10 @@
   .half-img2 {
     padding-top: 16%;
   }
+  .errorMessage{
+    font-size: 11px;
+    margin-top: -7%;
+  }
 }
 @media (max-width: 745px) {
   .half-img2 {
@@ -406,7 +416,10 @@
     width: 40%;
   }
   .btn {
-    width: 40%;
+    width: 40%!important;
+  }
+  .errorMessage{
+    margin-top: -2%;
   }
 }
 @media (max-width: 560px) {
