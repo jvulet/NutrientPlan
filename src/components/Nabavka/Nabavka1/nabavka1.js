@@ -1,23 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import "./style.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { addToCart } from "../../../redux/rootReducer";
 import { auth, db } from "../../firebase";
-import {
-  addDoc,
-  arrayUnion,
-  collection,
-  doc,
-  serverTimestamp,
-  setDoc,
-} from "firebase/firestore";
-import { getAuth } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 
 const Nabavka1 = () => {
   const Category = [
@@ -601,25 +593,18 @@ const Nabavka1 = () => {
   ];
 
   const dispatch = useDispatch();
+  let cart = useSelector((state) => state.product);
 
-  const [product, setProduct] = useState("");
+  console.log(cart);
+
   const handleAddToCart = async (product) => {
-    console.log(product.key);
-    console.log(product.frColor);
     dispatch(addToCart(product));
-    try {
-      
-      await setDoc(
-        doc(db, "groceryList", `${auth.currentUser.uid}`),
-        {
-          productName: arrayUnion(...product),
-        },
-        { merge: true }
-      );
-    } catch (error) {
-      console.log(error);
-    }
   };
+
+  useEffect(async () => {
+    const docRef = doc(db, "groceryList", `${auth.currentUser.uid}`);
+    await setDoc(docRef, cart);
+  }, [cart]);
 
   return (
     <Container className="NabCont" fluid>

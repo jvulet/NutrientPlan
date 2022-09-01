@@ -36,15 +36,19 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Registration from "../LogIn/registration";
 
-import { auth } from "../firebase";
-import { signOut } from "firebase/auth";
+import { auth,db } from "../firebase";
+import { signOut, onAuthStateChanged } from "firebase/auth";
 import ProtectedRoute from "../Mjerenja/protected";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addCartTotalQuantity,
+  addProductFromDBToCart,
+  setCartToNull,
+} from "../../redux/rootReducer";
+import{doc,getDoc}from "firebase/firestore"
 
 const NavBar = () => {
-  const { cartTotalQuantity } = useSelector((state) => state.product);
-
   const [user, setUser] = useState(null);
   const [changeLoginIcon, setChangeLoginIcon] = useState(faUser);
   const [show, setShow] = useState(false);
@@ -52,6 +56,34 @@ const NavBar = () => {
   const [userHasToken, setUserHasToken] = useState(null);
 
   const navigate = useNavigate();
+
+  const dispatch=useDispatch();
+  
+  let cart = useSelector((state) => state.product);
+
+  useEffect(async () => {
+    onAuthStateChanged(auth, async (currentUser) => {
+      if (currentUser) {
+        const docRef = doc(db, "groceryList", `${auth.currentUser.uid}`);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          console.log(docSnap.data().cartTotalQuantity);
+          localStorage.setItem("items", JSON.stringify(docSnap.data().items));
+
+          //Dodavanje ukupne količine
+          dispatch(addCartTotalQuantity(docSnap.data().cartTotalQuantity));
+
+          //Dodavanje proizvoda u redux state kad se korisnik ponovno logira i doda ih u normalan niz
+          docSnap.data().items.forEach((element) => {
+            console.log(element);
+            dispatch(addProductFromDBToCart(element));
+          });
+        }
+      }
+    });
+  }, []);
+
+  console.log(cart);
 
   useEffect(() => {
     auth.onAuthStateChanged((currentUser) => {
@@ -71,7 +103,11 @@ const NavBar = () => {
   const handleLogout = () => {
     if (user) {
       signOut(auth);
+      localStorage.clear();
       localStorage.removeItem("userId");
+      localStorage.removeItem("items");
+      localStorage.removeItem("totalItem");
+      dispatch(setCartToNull(cart));
       setUserHasToken(null);
     } else {
       setUser(false);
@@ -207,7 +243,7 @@ const NavBar = () => {
             <Nav.Link as={Link} to={"/lista"} className="nav-listaLogedIn">
               <div>
                 <div className="bagDiv">
-                  <span className="bag-quantity">{cartTotalQuantity}</span>
+                  <span className="bag-quantity">{cart.cartTotalQuantity}</span>
                 </div>
               </div>
               <FontAwesomeIcon

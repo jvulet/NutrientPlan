@@ -6,29 +6,30 @@ import "./style.css";
 import { removeFromCart } from "../../redux/rootReducer";
 
 import * as React from "react";
-import * as ReactDOM from "react-dom";
 import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
 
-
+import { auth, db } from "../firebase";
+import { useEffect } from "react";
+import { doc, updateDoc } from "firebase/firestore";
 
 const List = () => {
-  const cart = useSelector((state) => state.product);
-  //let [products, setProducts] = useState([]);
-
-  /* 
-  useEffect(() => {
-   const getProducts = JSON.parse(localStorage.getItem("items"));
-    //console.log(getProducts);
-
-    setProducts(getProducts);
-  }, []);
-
-  console.log(products); */
   const dispatch = useDispatch();
-  const handleRemoveFromCart = (product) => {
+
+  let cart = useSelector((state) => state.product);
+
+  const handleRemoveFromCart = async (product) => {
     dispatch(removeFromCart(product));
   };
 
+  console.log(cart);
+
+  useEffect(async () => {
+    if (cart.items.length > 0) {
+      const docRef = doc(db, "groceryList", `${auth.currentUser.uid}`);
+      await updateDoc(docRef, cart);
+    }
+  }, [cart]);
+  
   const pdfExportComponent = React.useRef(null);
   const exportPDFWithComponent = () => {
     if (pdfExportComponent.current) {
