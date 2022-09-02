@@ -159,7 +159,7 @@ krušku. Krušku ogulite, te narežite na manje kocke ili naribajte. Okus kaše 
                 <Row className="PrepareCard">
                   <Col xs={6}>
                     <div className="prepareHead-div">
-                      <h2 className="PrepareHeading">PRIPREMA</h2>
+                      <h2 className="PrepareHeading" onClick={displayMore}>PRIPREMA</h2>
                       <FontAwesomeIcon
                         className="readmore-icon"
                         icon={changeIcon}

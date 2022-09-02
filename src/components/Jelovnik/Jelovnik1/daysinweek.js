@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import "./style.css";
 
@@ -12,6 +12,12 @@ import Nedjelja from "./nedjelja";
 import { Col, Row } from "react-bootstrap";
 
 const Daysinweek = () => {
+
+const[toggleState,setToggleState]=useState(1);
+const toggleTab=(index)=>{
+  setToggleState(index);
+}
+
   const DaysInWeek = [
     {
       key: 1,
@@ -54,19 +60,23 @@ const Daysinweek = () => {
     <>
       <div className="AllButton">
         <Row>
-        {DaysInWeek.map((item) => {
-          return (
-            <Col className="ButtonCol">
-            <div className="ButtonDiv" key={item.key}>
-              <Link to={item.path} key={item.key} className="OneButton">
-                {item.dayTitle}
-              </Link>
-            </div>
-            </Col>
-          );
-        })}
+          {DaysInWeek.map((item) => {
+            return (
+              <Col className="ButtonCol">
+                <div className="ButtonDiv" key={item.key}>
+                  <Link
+                    to={item.path}
+                    key={item.key}
+                    className={toggleState=== item.key?"OneButtonActive":"OneButton"}
+                    onClick={()=>toggleTab(item.key)}
+                  >
+                    {item.dayTitle}
+                  </Link>
+                </div>
+              </Col>
+            );
+          })}
         </Row>
-        
       </div>
 
       <div>
