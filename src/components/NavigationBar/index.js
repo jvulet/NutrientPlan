@@ -173,7 +173,7 @@ const NavBar = () => {
                 </NavDropdown.Item>
                 <NavDropdown.Item>
                   <Link
-                    to="/jelovnik2"
+                    to="/jelovnik2/ponedjeljak"
                     className="JelovnikName"
                     onClick={handleOpenModal}
                   >
@@ -325,7 +325,7 @@ const NavBar = () => {
             }
           />
           <Route
-            path="/jelovnik2"
+            path="/jelovnik2/*"
             element={
               <ProtectedRoute elementPath={<Jelovnik2 />}>
                 <Jelovnik2 />

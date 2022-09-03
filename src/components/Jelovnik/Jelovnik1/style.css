@@ -119,6 +119,9 @@ figcaption {
   font-family: "Open Sans";
   font-size: 15px;
 }
+.prepare-txt{
+  font-size: 15px;
+}
 .PrepareCard {
   justify-content: center;
 }
@@ -169,6 +172,9 @@ figcaption {
     font-size: 13px;
   }
   .Ingredients {
+    font-size: 13px;
+  }
+  .prepare-txt{
     font-size: 13px;
   }
   .position-relative {
