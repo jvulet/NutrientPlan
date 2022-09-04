@@ -1,0 +1,54 @@
+.OneButton3:hover{
+    color: #000000;
+    font-weight: bolder;
+  }
+  .OneButtonActive3:hover{
+    color: #000000;
+    font-weight: bolder;
+  }
+  .OneButton3 {
+      background-color: rgba(192, 95, 112, 0.3) !important;
+      border-color: rgba(192, 95, 112, 0.3) !important;
+      border-radius: 5px;
+      border: none;
+      color: black;
+      text-align: center;
+      font-size: 16px;
+      font-family: "Open Sans", sans-serif;
+      width: 110px;
+      height: 35px;
+      text-decoration: none;
+      padding-top: 5px;
+    }
+    .OneButtonActive3{
+      background-color: rgba(192, 95, 112, 0.3) !important;
+      border-color: rgba(192, 95, 112, 0.3) !important;
+      border-radius: 5px;
+      border: none;
+      color: black;
+      text-align: center;
+      font-size: 16px;
+      font-family: "Open Sans", sans-serif;
+      width: 110px;
+      height: 35px;
+      text-decoration: none;
+      padding-top: 5px;
+      font-weight: bolder;
+    }
+    .Name3 {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 27px;
+      color: #c05f719c;
+    }
+    @media (max-width: 1000px) {
+      .Name3 {
+        font-size: 18px;
+      }}
+      @media (max-width: 860px) {
+          .Name3 {
+            font-size: 16px;
+          }}
+  
