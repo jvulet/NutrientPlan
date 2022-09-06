@@ -158,7 +158,7 @@ const MainPage = () => {
                   type="button"
                   class="btn btn-outline-dark"
                   style={{ cursor: "pointer" }}
-                  onClick={() => navigate("/jelovnik1")}
+                  onClick={() => navigate("/jelovnik1/ponedjeljak")}
                 >
                   1. JELOVNIK
                 </button>
@@ -186,7 +186,7 @@ const MainPage = () => {
                   type="button"
                   class="btn btn-outline-dark"
                   style={{ cursor: "pointer" }}
-                  onClick={() => navigate("/jelovnik2")}
+                  onClick={() => navigate("/jelovnik2/ponedjeljak")}
                 >
                   2. JELOVNIK
                 </button>
@@ -214,7 +214,7 @@ const MainPage = () => {
                   type="button"
                   class="btn btn-outline-dark"
                   style={{ cursor: "pointer" }}
-                  onClick={() => navigate("/jelovnik3")}
+                  onClick={() => navigate("/jelovnik3/ponedjeljak")}
                 >
                   3. JELOVNIK
                 </button>
@@ -226,9 +226,9 @@ const MainPage = () => {
 
       <div>
         <Routes>
-          <Route path={"/jelovnik1"} element={<Jelovnik1 />} />
-          <Route path={"/jelovnik2"} element={<Jelovnik2 />} />
-          <Route path={"/jelovnik3"} element={<Jelovnik3 />} />
+          <Route path={"/jelovnik1/*"} element={<Jelovnik1 />} />
+          <Route path={"/jelovnik2/*"} element={<Jelovnik2 />} />
+          <Route path={"/jelovnik3/*"} element={<Jelovnik3 />} />
         </Routes>
       </div>
     </>

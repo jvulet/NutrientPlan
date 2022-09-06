@@ -1,10 +1,17 @@
-import React from 'react'
+import React from "react";
+import { Container } from "react-bootstrap";
+import Daysinweek from "./daysinweek";
 import "./style.css";
 
 const Jelovnik3 = () => {
-    return (
-        <h1>Jelovnik3</h1>
-    )
-}
+  return (
+    <>
+      <Container className="FirstContainer" fluid>
+        <h1 className="FirstTitle">3. JELOVNIK</h1>
+        <Daysinweek />
+      </Container>
+    </>
+  );
+};
 
-export default Jelovnik3
+export default Jelovnik3;

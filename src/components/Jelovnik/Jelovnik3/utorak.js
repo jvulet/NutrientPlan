@@ -5,7 +5,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
-const Cetvrtak = () => {
+const Utorak = () => {
   const [isOpen, setOpen] = useState(false);
   const [changeIcon, setIcon] = useState(faAngleDown);
 
@@ -20,14 +20,18 @@ const Cetvrtak = () => {
       key: 1,
       name: "DORUČAK",
       bgColor: "#c4c4c4",
-      mealname: "Granola s jogurtom",
+      mealname: "Čokoladni smoothie",
       ingredients: [
-        "granola, 4 žlice",
+        "indijski orščić, 1 šaka",
         <br />,
-        "probiotik, 1 šalica",
+        "mlijeko, 1 čaša",
+        <br />,
+        "kakao, 1 čajna žlica",
+        <br />,
+        "datulja, 6 komada",
       ],
-      prepare: `Koristiti Boom Box granolu (bez dodanog šećera).`,
-      mealImg: require("../../../images/granola.jpg"),
+      prepare: `U blenderu pomiješati sve sastojke. Miksati dok se ne pretvori u jednoličnu smjesu.`,
+      mealImg: require("../../../images/datesmoothie.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -35,9 +39,9 @@ const Cetvrtak = () => {
       key: 2,
       name: "UŽINA",
       mealname: "Voćka po izboru",
-      ingredients: ["kiwi, 2 komada"],
+      ingredients: ["Kruška, 1 komad"],
       prepare: `Možete izabrati bilo koju voćku umjesto navedene.`,
-      mealImg: require("../../../images/kiwi.jpg"),
+      mealImg: require("../../../images/pear.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -45,32 +49,30 @@ const Cetvrtak = () => {
       key: 3,
       name: "RUČAK",
       bgColor: "#c4c4c4",
-      mealname: "Vege bolonjez",
+      mealname: "Ječmoto od gljiva",
       ingredients: [
-        "integralni špageti, 1 šalica",
+        "varivo, 1 tanjur",
         <br />,
-        "vege bolonjez, 1 tanjur",
+        "kupus, 1 šalica",
+        <br />,
+        "maslinovo ulje, 1 čajna žlica",
       ],
-      prepare: `Prvo očistite 1 mrkvu i celer pa sitno nasjeckajte. Luk i češnjak također nasjeckajte.
-      Zagrijati maslinovo ulje, dodati luk, pirjati dok ne omekša pa dodati češnjak potom dodati povrće
-       i leću i kratko zapeći uz stalno miješanje.
-      Zalijte vinom, dodajte rajčicu (pelate) i začine te na laganoj vatri
-       kuhajte 10 do 15 minuta dok se leća ne skuha.`,
-      mealImg: require("../../../images/vegebolognese.jpg"),
+      prepare: `Luk i gljive kratko propirajati na maslinovom ulju, dodati ječam i grašak. Kuhati pola sata
+      uz povremeno dolijevanje vruće vode.`,
+      mealImg: require("../../../images/jecam.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
     {
       key: 4,
       name: "MEĐUOBROK",
-      mealname: "Kruška i bademi",
+      mealname: "Voćka po izboru",
       ingredients: [
-        "kruška, 1 komad",
+        "kiwi, 2 komada",
         <br />,
-        "bademi, 1 šaka",
       ],
       prepare: `Možete izabrati bilo koju voćku umjesto navedene.`,
-      mealImg: require("../../../images/pear.jpg"),
+      mealImg: require("../../../images/kiwi.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -78,18 +80,18 @@ const Cetvrtak = () => {
       key: 5,
       name: "VEČERA",
       bgColor: "#c4c4c4",
-      mealname: "Sendvič od pureće šunke",
+      mealname: "Sendvič",
       ingredients: [
         "integralni kruh, 2 kriške",
         <br />,
-        "sirni namaz, 1 žlica",
+        "pesto genovese, 1 žlica",
         <br />,
-        "pureća šunka, 2 kriške",
+        "skyrella, 1 komad",
         <br />,
-        "cijeđeni sok, 1 naranča",
+        "rajčica, 1 komad",
       ],
-      prepare: `Na dvije tanke kriške posložiti navedene sastojke. Poslužiti uz svježi sok od naranče.`,
-      mealImg: require("../../../images/turkeytoast.jpg"),
+      prepare: `Kruh namazati pestom, ostale sastojke usitniti i posložiti na kruh.`,
+      mealImg: require("../../../images/pesto.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -109,7 +111,7 @@ const Cetvrtak = () => {
               <Row className="rowMeal">
                 <Col className="column1" xs={4} lg={6}>
                   <Row>
-                    <h2 className="Name2">{item.name}</h2>
+                    <h2 className="Name3">{item.name}</h2>
                   </Row>
                   <Row>
                     <h2 className="MealName">{item.mealname}</h2>
@@ -119,7 +121,7 @@ const Cetvrtak = () => {
                       <figure className="position-relative">
                         <img
                           className="card-img"
-                          src={require("../../../images/IngRBgreen.png")}
+                          src={require("../../../images/IngRBpink.png")}
                           alt="Card image"
                         />
                         <div className="card-txt">
@@ -171,4 +173,4 @@ const Cetvrtak = () => {
   );
 };
 
-export default Cetvrtak;
+export default Utorak;

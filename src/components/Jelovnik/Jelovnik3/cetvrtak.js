@@ -20,14 +20,20 @@ const Cetvrtak = () => {
       key: 1,
       name: "DORUČAK",
       bgColor: "#c4c4c4",
-      mealname: "Granola s jogurtom",
+      mealname: "Zeleni smoothie",
       ingredients: [
-        "granola, 4 žlice",
+        "ražene pahuljice, 5 žlice",
         <br />,
-        "probiotik, 1 šalica",
+        "kiwi, 1 komad",
+        <br />,
+        "jabuka, 1 komad",
+        <br />,
+        "mlijeko, 1 čaša",
+        <br />,
+        "spirulina, pola čajne žlice",
       ],
-      prepare: `Koristiti Boom Box granolu (bez dodanog šećera).`,
-      mealImg: require("../../../images/granola.jpg"),
+      prepare: `U blenderu pomiješati sve sastojke. Miksati dok se ne pretvori u jednoličnu smjesu.`,
+      mealImg: require("../../../images/greensmoothie.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -35,9 +41,9 @@ const Cetvrtak = () => {
       key: 2,
       name: "UŽINA",
       mealname: "Voćka po izboru",
-      ingredients: ["kiwi, 2 komada"],
-      prepare: `Možete izabrati bilo koju voćku umjesto navedene.`,
-      mealImg: require("../../../images/kiwi.jpg"),
+      ingredients: ["bademi, 1 šaka"],
+      prepare: `Možete izabrati bilo koje drugo orašasto voće umjesto navedenog.`,
+      mealImg: require("../../../images/almond.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -45,32 +51,28 @@ const Cetvrtak = () => {
       key: 3,
       name: "RUČAK",
       bgColor: "#c4c4c4",
-      mealname: "Vege bolonjez",
+      mealname: "Varivo",
       ingredients: [
-        "integralni špageti, 1 šalica",
+        "cikla, 1 šalica",
         <br />,
-        "vege bolonjez, 1 tanjur",
+        "maslinovo ulje, 1 čajna žlica",
+        <br />,
+        "varivo, 1 tanjur",
       ],
-      prepare: `Prvo očistite 1 mrkvu i celer pa sitno nasjeckajte. Luk i češnjak također nasjeckajte.
-      Zagrijati maslinovo ulje, dodati luk, pirjati dok ne omekša pa dodati češnjak potom dodati povrće
-       i leću i kratko zapeći uz stalno miješanje.
-      Zalijte vinom, dodajte rajčicu (pelate) i začine te na laganoj vatri
-       kuhajte 10 do 15 minuta dok se leća ne skuha.`,
-      mealImg: require("../../../images/vegebolognese.jpg"),
+      prepare: `Na maslinovom ulju kratko prepržiti luk i puretinu. Potom dodati kvinoja mješavinu, pasiranu rajčicu i začine po želji. Sve dobro
+      izmiješati, a zatim dodati i 1 čašu vode. Kuhati oko 10 minuta uz stalno miješanje dok se meso ne skuha. Po potrebi dolijevati s još
+      vode prilikom kuhanja.`,
+      mealImg: require("../../../images/quinoa.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
     {
       key: 4,
       name: "MEĐUOBROK",
-      mealname: "Kruška i bademi",
-      ingredients: [
-        "kruška, 1 komad",
-        <br />,
-        "bademi, 1 šaka",
-      ],
+      mealname: "Voćka po izboru",
+      ingredients: ["klementine, 2 komada"],
       prepare: `Možete izabrati bilo koju voćku umjesto navedene.`,
-      mealImg: require("../../../images/pear.jpg"),
+      mealImg: require("../../../images/mandarina.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -78,18 +80,20 @@ const Cetvrtak = () => {
       key: 5,
       name: "VEČERA",
       bgColor: "#c4c4c4",
-      mealname: "Sendvič od pureće šunke",
+      mealname: "Slanutak salata",
       ingredients: [
-        "integralni kruh, 2 kriške",
+        "slanutak, 1 šalica",
         <br />,
-        "sirni namaz, 1 žlica",
+        "feta sir, 2 kocke",
         <br />,
-        "pureća šunka, 2 kriške",
+        "krastavac, pola komada",
         <br />,
-        "cijeđeni sok, 1 naranča",
+        "luk, pola komada",
+        <br />,
+        "maslinovo ulje, 1 čajna žlica",
       ],
-      prepare: `Na dvije tanke kriške posložiti navedene sastojke. Poslužiti uz svježi sok od naranče.`,
-      mealImg: require("../../../images/turkeytoast.jpg"),
+      prepare: `U jednoj zdjeli izmješati gore navedene sastojke. Začiniti solju i maslinovim uljem.`,
+      mealImg: require("../../../images/slanutaksalata.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -109,7 +113,7 @@ const Cetvrtak = () => {
               <Row className="rowMeal">
                 <Col className="column1" xs={4} lg={6}>
                   <Row>
-                    <h2 className="Name2">{item.name}</h2>
+                    <h2 className="Name3">{item.name}</h2>
                   </Row>
                   <Row>
                     <h2 className="MealName">{item.mealname}</h2>
@@ -119,7 +123,7 @@ const Cetvrtak = () => {
                       <figure className="position-relative">
                         <img
                           className="card-img"
-                          src={require("../../../images/IngRBgreen.png")}
+                          src={require("../../../images/IngRBpink.png")}
                           alt="Card image"
                         />
                         <div className="card-txt">
@@ -146,7 +150,9 @@ const Cetvrtak = () => {
                 <Row className="PrepareCard">
                   <Col xs={6}>
                     <div className="prepareHead-div">
-                      <h2 className="PrepareHeading" onClick={displayMore}>PRIPREMA</h2>
+                      <h2 className="PrepareHeading" onClick={displayMore}>
+                        PRIPREMA
+                      </h2>
                       <FontAwesomeIcon
                         className="readmore-icon"
                         icon={changeIcon}

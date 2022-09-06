@@ -5,7 +5,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
-const Cetvrtak = () => {
+const Srijeda = () => {
   const [isOpen, setOpen] = useState(false);
   const [changeIcon, setIcon] = useState(faAngleDown);
 
@@ -20,24 +20,22 @@ const Cetvrtak = () => {
       key: 1,
       name: "DORUČAK",
       bgColor: "#c4c4c4",
-      mealname: "Granola s jogurtom",
-      ingredients: [
-        "granola, 4 žlice",
-        <br />,
-        "probiotik, 1 šalica",
-      ],
-      prepare: `Koristiti Boom Box granolu (bez dodanog šećera).`,
-      mealImg: require("../../../images/granola.jpg"),
+      mealname: "Energetska pločica",
+      ingredients: ["energetska pločica, 1 komad", <br />, "kefir, 1 čaša"],
+      prepare: `Konzumirati pločice koje su pripremeljene u ponedjeljak za međuobrok.`,
+      mealImg: require("../../../images/energybar.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
     {
       key: 2,
       name: "UŽINA",
-      mealname: "Voćka po izboru",
-      ingredients: ["kiwi, 2 komada"],
+      mealname: "Integralni krekeri",
+      ingredients: ["Jabuka, 1 komad", 
+      <br />, 
+      "integralni krekeri, 3 komada"],
       prepare: `Možete izabrati bilo koju voćku umjesto navedene.`,
-      mealImg: require("../../../images/kiwi.jpg"),
+      mealImg: require("../../../images/crackers.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -45,32 +43,42 @@ const Cetvrtak = () => {
       key: 3,
       name: "RUČAK",
       bgColor: "#c4c4c4",
-      mealname: "Vege bolonjez",
+      mealname: "Šarena salata",
       ingredients: [
-        "integralni špageti, 1 šalica",
+        "piletina, 1 file",
         <br />,
-        "vege bolonjez, 1 tanjur",
+        "tikva, 1 šalica",
+        <br />,
+        "kuhana cvjetača, 1 šalica",
+        <br />,
+        "tjestenina, pola šalice",
+        <br />,
+        "maslinovo ulje, 2 čajne žlice",
       ],
-      prepare: `Prvo očistite 1 mrkvu i celer pa sitno nasjeckajte. Luk i češnjak također nasjeckajte.
-      Zagrijati maslinovo ulje, dodati luk, pirjati dok ne omekša pa dodati češnjak potom dodati povrće
-       i leću i kratko zapeći uz stalno miješanje.
-      Zalijte vinom, dodajte rajčicu (pelate) i začine te na laganoj vatri
-       kuhajte 10 do 15 minuta dok se leća ne skuha.`,
-      mealImg: require("../../../images/vegebolognese.jpg"),
+      prepare: `Piletinu i povrće narezati na manje komade. Začiniti maslinovim uljem i začinima po želji (sol, papar, češnja, crvena paprika,
+        origano) te peći u pećnici na 180 stupnjeva dok meso ne bude gotovo. U međuvremenu skuhati tjesteninu. Sve zajedno prebaciti u
+        zdjelu, dodati rikolu i ocat te dobro promiješati.`,
+      mealImg: require("../../../images/macaronisalad.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
     {
       key: 4,
       name: "MEĐUOBROK",
-      mealname: "Kruška i bademi",
+      mealname: "Raffaello puding",
       ingredients: [
-        "kruška, 1 komad",
+        "chia sjemenke, 2 žlice",
         <br />,
-        "bademi, 1 šaka",
+        "kokos, 1 žlica",
+        <br />,
+        "med, 1 čajna žlica",
+        <br />,
+        "mlijeko, pola šalice",
+        <br />,
+        "badem, 5 komada",
       ],
-      prepare: `Možete izabrati bilo koju voćku umjesto navedene.`,
-      mealImg: require("../../../images/pear.jpg"),
+      prepare: `Sve sastojke pomiješati u zdjelici i ostaviti u hladnjaku dok sjemenke ne nabubre.`,
+      mealImg: require("../../../images/raffaello.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -78,18 +86,19 @@ const Cetvrtak = () => {
       key: 5,
       name: "VEČERA",
       bgColor: "#c4c4c4",
-      mealname: "Sendvič od pureće šunke",
+      mealname: "Fritata",
       ingredients: [
-        "integralni kruh, 2 kriške",
+        "parmezan, 1 žlica",
         <br />,
-        "sirni namaz, 1 žlica",
+        "jaje, 2 komada",
         <br />,
-        "pureća šunka, 2 kriške",
-        <br />,
-        "cijeđeni sok, 1 naranča",
+        "maslinovo ulje, 2 čajne žlice",
       ],
-      prepare: `Na dvije tanke kriške posložiti navedene sastojke. Poslužiti uz svježi sok od naranče.`,
-      mealImg: require("../../../images/turkeytoast.jpg"),
+      prepare: `U zdjeli razmutiti dva jaja s 1 žlicom vode. Potom dodati parmezan te začinsko bilje (vlasac, peršin, origano, papar). Sve dobro
+      izmiješati te izliti na dobro ugrijanu tavu premazanu maslinovim uljem. Smanjiti vatru i pustiti da se peče otprilike dvije minute.
+      Nakon toga početi odizati krajeve kako bi preostala smjesa jaja mogla iscuriti ispod. Peći fritatu još par minuta, dok se ne stisne, ali
+      pripaziti da u sredini i dalje bude kremasta.`,
+      mealImg: require("../../../images/fritata.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -109,7 +118,7 @@ const Cetvrtak = () => {
               <Row className="rowMeal">
                 <Col className="column1" xs={4} lg={6}>
                   <Row>
-                    <h2 className="Name2">{item.name}</h2>
+                    <h2 className="Name3">{item.name}</h2>
                   </Row>
                   <Row>
                     <h2 className="MealName">{item.mealname}</h2>
@@ -119,7 +128,7 @@ const Cetvrtak = () => {
                       <figure className="position-relative">
                         <img
                           className="card-img"
-                          src={require("../../../images/IngRBgreen.png")}
+                          src={require("../../../images/IngRBpink.png")}
                           alt="Card image"
                         />
                         <div className="card-txt">
@@ -146,7 +155,9 @@ const Cetvrtak = () => {
                 <Row className="PrepareCard">
                   <Col xs={6}>
                     <div className="prepareHead-div">
-                      <h2 className="PrepareHeading" onClick={displayMore}>PRIPREMA</h2>
+                      <h2 className="PrepareHeading" onClick={displayMore}>
+                        PRIPREMA
+                      </h2>
                       <FontAwesomeIcon
                         className="readmore-icon"
                         icon={changeIcon}
@@ -171,4 +182,4 @@ const Cetvrtak = () => {
   );
 };
 
-export default Cetvrtak;
+export default Srijeda;

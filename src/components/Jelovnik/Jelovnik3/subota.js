@@ -5,7 +5,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
-const Cetvrtak = () => {
+const Subota = () => {
   const [isOpen, setOpen] = useState(false);
   const [changeIcon, setIcon] = useState(faAngleDown);
 
@@ -20,20 +20,54 @@ const Cetvrtak = () => {
       key: 1,
       name: "DORUČAK",
       bgColor: "#c4c4c4",
-      mealname: "Granola s jogurtom",
+      mealname: "Kikiriki tost",
       ingredients: [
-        "granola, 4 žlice",
+        "integralni kruh, 1 kriška",
         <br />,
-        "probiotik, 1 šalica",
+        "kikirikijev maslac, 1 žlica",
+        <br />,
+        "banana, 1 komad",
       ],
-      prepare: `Koristiti Boom Box granolu (bez dodanog šećera).`,
-      mealImg: require("../../../images/granola.jpg"),
+      prepare: `Na kruh namazati kikiriki maslac. Bananu narezati na kolutiće
+      pa posložiti na vrh.`,
+      mealImg: require("../../../images/kikirikitost.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
     {
       key: 2,
       name: "UŽINA",
+      mealname: "Acidofil",
+      ingredients: ["acidofil, 1 čaša"],
+      prepare: `Umjesto acidofila možete uzeti kefir, kiselo mlijeko ili probiotik.`,
+      mealImg: require("../../../images/yogo.jpg"),
+      imhHeight: "320px",
+      imWidth: "246px",
+    },
+    {
+      key: 3,
+      name: "RUČAK",
+      bgColor: "#c4c4c4",
+      mealname: "Polpete od prosa",
+      ingredients: [
+        "juha od brokule, 1 tanjur",
+        <br />,
+        "piletina, 1 file",
+        <br />,
+        "polpete od prosa, 2 komada",
+      ],
+      prepare: `U duplo više vode skuhati proso sa začinima. Po potrebi dodati još vode. Za skuhati proso potrebno je oko 8 minuta, odnosno dok
+      ne dobijete gustu smjesu. Ostaviti kuhani proso po strani da se ohladi tako da ga možete rukom oblikovati u polpete. U
+      međuvremenu narezati mladi sir na kockice ili ga naribati. Sjemenke tostirati za bolji okus. Sve zajedno pomiješati. Dodati 1-2 žlice
+      krušnih mrvica. Smjesu oblikovati među rukama u 8 polpeta. Staviti ih na masni papir te peći u pećnici na 180 stupnjeva oko 10
+      minuta sa svake strane.`,
+      mealImg: require("../../../images/polpete.jpg"),
+      imhHeight: "320px",
+      imWidth: "246px",
+    },
+    {
+      key: 4,
+      name: "MEĐUOBROK",
       mealname: "Voćka po izboru",
       ingredients: ["kiwi, 2 komada"],
       prepare: `Možete izabrati bilo koju voćku umjesto navedene.`,
@@ -42,54 +76,19 @@ const Cetvrtak = () => {
       imWidth: "246px",
     },
     {
-      key: 3,
-      name: "RUČAK",
-      bgColor: "#c4c4c4",
-      mealname: "Vege bolonjez",
-      ingredients: [
-        "integralni špageti, 1 šalica",
-        <br />,
-        "vege bolonjez, 1 tanjur",
-      ],
-      prepare: `Prvo očistite 1 mrkvu i celer pa sitno nasjeckajte. Luk i češnjak također nasjeckajte.
-      Zagrijati maslinovo ulje, dodati luk, pirjati dok ne omekša pa dodati češnjak potom dodati povrće
-       i leću i kratko zapeći uz stalno miješanje.
-      Zalijte vinom, dodajte rajčicu (pelate) i začine te na laganoj vatri
-       kuhajte 10 do 15 minuta dok se leća ne skuha.`,
-      mealImg: require("../../../images/vegebolognese.jpg"),
-      imhHeight: "320px",
-      imWidth: "246px",
-    },
-    {
-      key: 4,
-      name: "MEĐUOBROK",
-      mealname: "Kruška i bademi",
-      ingredients: [
-        "kruška, 1 komad",
-        <br />,
-        "bademi, 1 šaka",
-      ],
-      prepare: `Možete izabrati bilo koju voćku umjesto navedene.`,
-      mealImg: require("../../../images/pear.jpg"),
-      imhHeight: "320px",
-      imWidth: "246px",
-    },
-    {
       key: 5,
       name: "VEČERA",
       bgColor: "#c4c4c4",
-      mealname: "Sendvič od pureće šunke",
+      mealname: "Palačinke",
       ingredients: [
-        "integralni kruh, 2 kriške",
+        "palačinke, 4 komada",
         <br />,
-        "sirni namaz, 1 žlica",
-        <br />,
-        "pureća šunka, 2 kriške",
-        <br />,
-        "cijeđeni sok, 1 naranča",
+        "mermelada, 1 žlica",
       ],
-      prepare: `Na dvije tanke kriške posložiti navedene sastojke. Poslužiti uz svježi sok od naranče.`,
-      mealImg: require("../../../images/turkeytoast.jpg"),
+      prepare: `Jednu šalicu mlake vode pomiješati sa šećerom i kvascem pa pustiti par minuta da se poveže. U blenderu izmiješati drugu šalicu
+      vode, šalicu griza, koricu naranče, sok od naranče ili jabuke i prstohvat soli. Dodati u blender i smjesu s kvascem te dobivenu
+      smjesu ostavite 30 minuta. Peći na kokosovom ulju, na vrućoj tavici po 2 minute sa svake strane.`,
+      mealImg: require("../../../images/pancakes.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -109,7 +108,7 @@ const Cetvrtak = () => {
               <Row className="rowMeal">
                 <Col className="column1" xs={4} lg={6}>
                   <Row>
-                    <h2 className="Name2">{item.name}</h2>
+                    <h2 className="Name3">{item.name}</h2>
                   </Row>
                   <Row>
                     <h2 className="MealName">{item.mealname}</h2>
@@ -119,7 +118,7 @@ const Cetvrtak = () => {
                       <figure className="position-relative">
                         <img
                           className="card-img"
-                          src={require("../../../images/IngRBgreen.png")}
+                          src={require("../../../images/IngRBpink.png")}
                           alt="Card image"
                         />
                         <div className="card-txt">
@@ -146,7 +145,9 @@ const Cetvrtak = () => {
                 <Row className="PrepareCard">
                   <Col xs={6}>
                     <div className="prepareHead-div">
-                      <h2 className="PrepareHeading" onClick={displayMore}>PRIPREMA</h2>
+                      <h2 className="PrepareHeading" onClick={displayMore}>
+                        PRIPREMA
+                      </h2>
                       <FontAwesomeIcon
                         className="readmore-icon"
                         icon={changeIcon}
@@ -171,4 +172,4 @@ const Cetvrtak = () => {
   );
 };
 
-export default Cetvrtak;
+export default Subota;

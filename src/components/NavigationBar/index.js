@@ -152,7 +152,7 @@ const NavBar = () => {
             style={{ marginRight: "15%", paddingTop: "15px" }}
           />
           <Navbar.Collapse className="NavCollapse" id="responsive-navbar-nav">
-            <Nav className="Me-auto" style={{ paddingTop: "20px" }}>
+            <Nav className="Me-auto" style={{ paddingTop: "20px" }} >
               <Nav.Link as={Link} to="/" style={{ paddingRight: "20px" }}>
                 NASLOVNICA
               </Nav.Link>
@@ -182,7 +182,7 @@ const NavBar = () => {
                 </NavDropdown.Item>
                 <NavDropdown.Item>
                   <Link
-                    to="/jelovnik3"
+                    to="/jelovnik3/ponedjeljak"
                     className="JelovnikName"
                     onClick={handleOpenModal}
                   >
@@ -333,7 +333,7 @@ const NavBar = () => {
             }
           />
           <Route
-            path="/jelovnik3"
+            path="/jelovnik3/*"
             element={
               <ProtectedRoute elementPath={<Jelovnik3 />}>
                 <Jelovnik3 />

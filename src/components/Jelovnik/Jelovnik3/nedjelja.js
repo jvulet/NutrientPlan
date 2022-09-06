@@ -5,7 +5,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
-const Cetvrtak = () => {
+const Nedjelja = () => {
   const [isOpen, setOpen] = useState(false);
   const [changeIcon, setIcon] = useState(faAngleDown);
 
@@ -20,14 +20,21 @@ const Cetvrtak = () => {
       key: 1,
       name: "DORUČAK",
       bgColor: "#c4c4c4",
-      mealname: "Granola s jogurtom",
+      mealname: "Drugačija jaja",
       ingredients: [
-        "granola, 4 žlice",
+        "jaja, 2 komada",
         <br />,
-        "probiotik, 1 šalica",
+        "avokado, 1/4 komada",
+        <br />,
+        "limunov sok, 2 žlice",
+        <br />,
+        "začinsko bilje, prstohvat",
+        <br />,
+        "špinat, 1 šaka",
       ],
-      prepare: `Koristiti Boom Box granolu (bez dodanog šećera).`,
-      mealImg: require("../../../images/granola.jpg"),
+      prepare: `Skuhajte jaja pa ih izrežite na 8 dijelova. Avokado ogulite i narežite na kockice. Pomiješajte jaja i avokado u posuditi pa im dodajte
+      začinsko bilje (peršin, vlasac) te zalijte cijeđenim limunovim sokom. Promiješajte prije konzumacije. Poslužite s mladim špinatom.`,
+      mealImg: require("../../../images/differenteggs.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -35,9 +42,9 @@ const Cetvrtak = () => {
       key: 2,
       name: "UŽINA",
       mealname: "Voćka po izboru",
-      ingredients: ["kiwi, 2 komada"],
+      ingredients: ["Jabuka, 1 komad"],
       prepare: `Možete izabrati bilo koju voćku umjesto navedene.`,
-      mealImg: require("../../../images/kiwi.jpg"),
+      mealImg: require("../../../images/apple.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -45,32 +52,33 @@ const Cetvrtak = () => {
       key: 3,
       name: "RUČAK",
       bgColor: "#c4c4c4",
-      mealname: "Vege bolonjez",
+      mealname: "Junetina u saftu",
       ingredients: [
-        "integralni špageti, 1 šalica",
+        "junetina u saftu, 1 tanjur",
         <br />,
-        "vege bolonjez, 1 tanjur",
+        "palenta, 1 šalica",
+        <br />,
+        "cikla, 1 šalica",
       ],
-      prepare: `Prvo očistite 1 mrkvu i celer pa sitno nasjeckajte. Luk i češnjak također nasjeckajte.
-      Zagrijati maslinovo ulje, dodati luk, pirjati dok ne omekša pa dodati češnjak potom dodati povrće
-       i leću i kratko zapeći uz stalno miješanje.
-      Zalijte vinom, dodajte rajčicu (pelate) i začine te na laganoj vatri
-       kuhajte 10 do 15 minuta dok se leća ne skuha.`,
-      mealImg: require("../../../images/vegebolognese.jpg"),
+      prepare: `Popržiti luk i mrkvu, zatim dodati junetinu i temeljac. Kauhati dok meso ne omekša u potpunosti. 
+      Začiniti po želji.`,
+      mealImg: require("../../../images/junetina.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
     {
       key: 4,
       name: "MEĐUOBROK",
-      mealname: "Kruška i bademi",
+      mealname: "Slatki griz",
       ingredients: [
         "kruška, 1 komad",
         <br />,
-        "bademi, 1 šaka",
+        "brusnice, 1 žlica",
+        <br />,
+        "orah, 5 polovica",
       ],
-      prepare: `Možete izabrati bilo koju voćku umjesto navedene.`,
-      mealImg: require("../../../images/pear.jpg"),
+      prepare: `Krušku naribati te posuti sušenim grožđicama i nasjeckanim orasima.`,
+      mealImg: require("../../../images/sweetbite.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -78,18 +86,21 @@ const Cetvrtak = () => {
       key: 5,
       name: "VEČERA",
       bgColor: "#c4c4c4",
-      mealname: "Sendvič od pureće šunke",
+      mealname: "Batat brownie",
       ingredients: [
-        "integralni kruh, 2 kriške",
+        "batat brownie, 2 komada",
         <br />,
-        "sirni namaz, 1 žlica",
-        <br />,
-        "pureća šunka, 2 kriške",
-        <br />,
-        "cijeđeni sok, 1 naranča",
+        "kefir, 1 čaša"
       ],
-      prepare: `Na dvije tanke kriške posložiti navedene sastojke. Poslužiti uz svježi sok od naranče.`,
-      mealImg: require("../../../images/turkeytoast.jpg"),
+      prepare: `Zagrijte pećnicu na 180 stupnjeva. Manju tepsiju obložite papirom za pečenje,a zatim
+      lagano premažite uljem. 
+      Stavite neoguljeni batat u mikrovalnu pećnicu i pecite na jakoj temperaturi 7 do 10 minuta ili dok potpuno ne omekša. Kada se
+      dovoljno ohladi za rukovanje, izvadite 2 šalice batata i zgnječite ga. Umutite maslinovo ulje dok se ne sjedini, 
+      zatim umiješajte med i ekstrakt vanilije. Umutite jaja.
+      U posebnoj posudi pomiješajte integralno brašno, kakao prah, cimet, muškatni oraščić, prašak za pecivo i sol. Dodajte suhe
+      sastojke mokrim sastojcima i lagano miješajte dok se sastojci ne sjedine. Ubacite komadiće čokolade.
+      U pripremljenu tepsiju prebacite smjesu i zagladite ju. Pecite 25-30 minuta.`,
+      mealImg: require("../../../images/brownie.jpg"),
       imhHeight: "320px",
       imWidth: "246px",
     },
@@ -109,7 +120,7 @@ const Cetvrtak = () => {
               <Row className="rowMeal">
                 <Col className="column1" xs={4} lg={6}>
                   <Row>
-                    <h2 className="Name2">{item.name}</h2>
+                    <h2 className="Name3">{item.name}</h2>
                   </Row>
                   <Row>
                     <h2 className="MealName">{item.mealname}</h2>
@@ -119,7 +130,7 @@ const Cetvrtak = () => {
                       <figure className="position-relative">
                         <img
                           className="card-img"
-                          src={require("../../../images/IngRBgreen.png")}
+                          src={require("../../../images/IngRBpink.png")}
                           alt="Card image"
                         />
                         <div className="card-txt">
@@ -171,4 +182,4 @@ const Cetvrtak = () => {
   );
 };
 
-export default Cetvrtak;
+export default Nedjelja;
