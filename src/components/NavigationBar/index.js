@@ -18,6 +18,7 @@ import {
   Routes,
   Route,
   Link,
+  NavLink,
   useNavigate,
 } from "react-router-dom";
 
@@ -153,9 +154,13 @@ const NavBar = () => {
           />
           <Navbar.Collapse className="NavCollapse" id="responsive-navbar-nav">
             <Nav className="Me-auto" style={{ paddingTop: "20px" }} >
-              <Nav.Link as={Link} to="/" style={{ paddingRight: "20px" }}>
+              <NavLink 
+               to="/" 
+               style={{ paddingRight: "20px" }}
+               className={({isActive})=>(isActive? "active":"link")}
+               >
                 NASLOVNICA
-              </Nav.Link>
+              </NavLink>
               <NavDropdown
                 title="JELOVNIK"
                 id="collasible-nav-dropdown"
@@ -163,31 +168,37 @@ const NavBar = () => {
                 style={{ paddingRight: "20px" }}
               >
                 <NavDropdown.Item>
-                  <Link
+                  <NavLink
                     to="/jelovnik1/ponedjeljak"
-                    className="JelovnikName"
+                    className={
+                      (({isActive})=>(isActive?"active":"link"),"JelovnikName")
+                    }
                     onClick={handleOpenModal}
                   >
                     1. jelovnik
-                  </Link>
+                  </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link
+                  <NavLink
                     to="/jelovnik2/ponedjeljak"
-                    className="JelovnikName"
+                    className={
+                      (({isActive})=>(isActive?"active":"link"),"JelovnikName")
+                    }
                     onClick={handleOpenModal}
                   >
                     2. jelovnik
-                  </Link>
+                  </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link
+                  <NavLink
                     to="/jelovnik3/ponedjeljak"
-                    className="JelovnikName"
+                    className={
+                      (({isActive})=>(isActive?"active":"link"),"JelovnikName")
+                    }
                     onClick={handleOpenModal}
                   >
                     3. jelovnik
-                  </Link>
+                  </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown
@@ -197,41 +208,47 @@ const NavBar = () => {
                 style={{ paddingRight: "20px" }}
               >
                 <NavDropdown.Item>
-                  <Link
+                  <NavLink
                     to="/nabavka1"
-                    className="NabavkaName"
+                    className={
+                      (({isActive})=>(isActive?"active":"link"),"NabavkaName")
+                    }
                     onClick={handleOpenModal}
                   >
                     Nabavka 1
-                  </Link>
+                  </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link
+                  <NavLink
                     to="/nabavka2"
-                    className="NabavkaName"
+                    className={
+                      (({isActive})=>(isActive?"active":"link"),"NabavkaName")
+                    }
                     onClick={handleOpenModal}
                   >
                     Nabavka 2
-                  </Link>
+                  </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link
+                  <NavLink
                     to="/nabavka3"
-                    className="NabavkaName"
+                    className={
+                      (({isActive})=>(isActive?"active":"link"),"NabavkaName")
+                    }
                     onClick={handleOpenModal}
                   >
                     Nabavka 3
-                  </Link>
+                  </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link
-                as={Link}
+              <NavLink
                 to={"/mjerenja"}
+                className={({isActive})=>(isActive? "active":"link")}
                 onClick={handleOpenModal}
                 style={{ paddingRight: "20px" }}
               >
                 MJERENJA
-              </Nav.Link>
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
